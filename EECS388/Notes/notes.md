@@ -1,9 +1,8 @@
 # Notes
 
 ---------------
-
 # **Thursday January 18th**
-
+---------------
 ### Overview of the topics
 
 ### Embedded Systems
@@ -91,3 +90,69 @@
 ### My Garbage Summary
 * Limited Function computers in real world
 * Requirements: perfromance, efficiency, safety, secrutiy, and privacy
+
+---------------
+# **TUESDAY JANUARY 23RD 2023**
+---------------
+
+---------------
+# **EMBEDDED SOFTWARE DEVELOPMENT**
+---------------
+
+* **Software Abstraction**
+    * Application programs, os, compiler
+
+* **Hardware**
+    * Primary Component: microprocessor or microcontroller
+    * Abstractions: microacrchitecture and instruction set architecture
+    * ![ISA: Instruction Set Architecture](ISA.png)
+
+* **Example Abstraction**
+    * *Application Software*
+        * Word processor, internet, browser, games
+    * *System software*
+        * *OS* : manages resources to run applications
+        * *Compiler* : translates programs to machine readable binary
+    * *Hardware*
+        * Processor, memory, IO
+### Instructure Set Architecture
+* (ISA)
+* Acts as interface between hardware and software
+* abstraction of hardware that can be controlled by assemby
+* considred a manual for assembly
+* specifis;
+    * memory org
+    * register set
+    * instruction set (multiply, add, etc.)
+* ARM, x86, MIPS, SPARC, and PowerPC
+
+* *Analogy*
+    * ISA of a car describes what the driver needs to do to get the carry out the drivers wishes
+
+### Microarchitecture
+* Design describes interconnections of microarch elelments
+* Implementation of the ISA
+* x86-64 : AMD, Intel
+
+### Embed Sys Dev Platform
+* exe runs on devices with the same arch
+
+### Compiler tool chain
+* .c/.h -> .i -> .s -> .o -> .exe
+* prprocessor :
+    * compiler : gcc
+        * assembler  : as
+            * linker : ld, turns machine code into executable code
+
+### Cross Compilation
+* compile on one system run on another
+* hex holds 4x binary
+
+### Problems
+* Building can be complex
+* building manually takes time and effot
+* *SO WE USE MAKEFILESSS*
+
+### Makefiles
+* Make is a tool which controls the generation of executables and other non-source files of a program
+* make file automates commands
