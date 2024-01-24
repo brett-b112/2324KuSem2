@@ -111,7 +111,7 @@
         * merge sort breaks up and array into two partitions, and then each two into two, etc. until there is only one left in each partition
         * next each element is compared against the first element of the other subarray and so on until it is reorganized in order.
 
-![runtime](msRuntime.jpg)
+![runtime](msRuntime.JPG)
 * we ignore second term to get run time.
 ## SUMMARY
     Insertion Sort: O(n^2)
