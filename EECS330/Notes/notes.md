@@ -1,7 +1,7 @@
  *Notes*
 
+--------------------------
 # Wednesday January 17th
-
 --------------------------
 
 # What problems can algoriths solve?
@@ -89,3 +89,33 @@
     * We simplify our runtime
     * we remove the leadin term i.e 3* O(n) we remove the 3 it's inconsequential in the long run
     * O(n) faster than O(n^2) regardless of numerical coefficient
+
+--------------------------
+# Wenesday January 24th
+--------------------------
+# More sorting algos (merge sort)
+--------------------------
+
+* ## Divide and Conquer
+    * Recursion and three problem sets
+        * *Divide*
+            * The problem into further subproblems smaller than instances of the same problem
+        * *Conquer*
+            * subproblems are solved recursively
+        * *Combine*
+            * combine subsolutions to original problem
+* ## Merge sort
+    * uses divide and conquer
+        * ![merge sort](mergeSort.png)
+        * ![pseudocode](mergeSortCode.png)
+        * merge sort breaks up and array into two partitions, and then each two into two, etc. until there is only one left in each partition
+        * next each element is compared against the first element of the other subarray and so on until it is reorganized in order.
+
+![runtime](msRuntime.jpg)
+* we ignore second term to get run time.
+## SUMMARY
+    Insertion Sort: O(n^2)
+    Merge Sort: O(n log n)
+
+    Insertion sort is **asymptotically** (ignoring constants) slower than merge sort, ti is faster for sorting small arrays in practice (due to its smaller constant factors)
+    Insertion sort is used when there are sufficently small partitions from merge
