@@ -156,3 +156,69 @@
 ### Makefiles
 * Make is a tool which controls the generation of executables and other non-source files of a program
 * make file automates commands
+
+---------------
+# **Thursday January 25th**
+---------------
+# **Programming Languages**
+---------------
+![review](tuesday23review.png)
+**Answers**
+1. True
+2. True
+3. True
+* Cyber-physical examples: (i. robotic arm) and (iv. Autonomous vehicle)
+
+### **High Level**
+* Feasbility of learning, porting across OS
+
+### **Low Level**
+* Lower code overhead for execution
+* Bitwise operatoin
+* memory management
+    * Pointers, dynamic memory allocation
+* I/O Operation
+
+### **Bits vs bites**
+* b7b6b5b4b43b2b1b0
+* b7 Most significant bit (msb)
+* b0 Least significant bit (LSB)
+* **MSB** **LSB**
+    * 1000 > than 0001
+
+### **Declaring variables**
+* must have data type and possible declaration of variable
+* python is dynamically types while thigns like c/c++ are statically typed
+
+### **Benefits of static vs dynamically typed**
+* **Dynamically Typed**
+    * flexible and faster to produce
+* **Statically Typed**
+    * *efficient machine code generation*
+    * *low-level control*
+    * *generates optimized machine code*
+![types](types.png)
+### **Differnet variables in computer memory**
+* Each address location typically hold 8-bit (i.e., 1-byte) of data.
+* A 4-byte int value occupies 4 memory locations. A 32-bit system typically uses 32-bit addresses.
+
+### **Type Modifiers**
+* ![qualifiers](qualified.png)
+
+### **Type Qualifier**
+*  **const** : variable can't be changed
+*  **volatile** : tells the compiler that the value of the variable may change at any time--without any action being taken by the nearby code (could change by the hardware instead)
+
+### **Number Systems**
+* Modern number system : **POSITIONAL SYSTEM**
+* hex base 16
+![numSys](numSys.png)
+* How to convert those pesky numbers in case you ever *"find yourself debugging your assembly programs" - Dr. Hoque*
+![convert](convert.png)
+### **Representing Signed numbers**
+* sign magnitude method
+    * reserve a bit to represnet the sign (i.e 001 = +1 and 101 = -1)
+* twos compliment
+    * invert digits and add one
+    * eliminate negative zero and make arithmetic in hardware easier
+    * 0b means binary and 0x means hex
