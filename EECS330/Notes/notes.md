@@ -119,3 +119,37 @@
 
     Insertion sort is **asymptotically** (ignoring constants) slower than merge sort, ti is faster for sorting small arrays in practice (due to its smaller constant factors)
     Insertion sort is used when there are sufficently small partitions from merge
+
+--------------------------
+# Friday January 26th
+--------------------------
+# Asymptotic Notations
+--------------------------
+*Asymptotic efficiency* is the worst case running time where the input size in the limit (where higher order dominates and lower order are less relevant)
+### O-Notation
+* characterizes an upper bound on the asymptotic behavior of the function
+* *grows no faster than a certain rate* (again based on highest order)
+* ex: f(x) = 7x^3 + 2x^2 + 3 ===> is O(n^3)
+### Ω-notation
+* Ω-notation characterizes a *lower bound* as the asyptotic  behavior of the function
+* the function grows **as least as fast as** a certain rate
+* also based on highesdt order
+* 𝑓(𝑛) = 7𝑛3 + 100𝑛2 − 20𝑛 + 6 is Ω(𝑛3), since the highest-order term 7𝑛3 grows at least as fast as 𝑛3
+### Θ-notation
+* is a **tight bound**
+* function grows **precisely** at a certain rate
+* again based on highest order
+* 𝑓(𝑛) = 7𝑛3 + 100𝑛2 − 20𝑛 + 6 is both 𝑂 𝑛3 and Ω(𝑛3), so it is also Θ(𝑛3).
+* Note: If a function is both 𝑂(𝑓(𝑛)) and Ω(𝑓(𝑛)), then the function is Θ(𝑓(𝑛)).
+* proof for insertion sort is **IN THE SLIDES**
+
+##### Insertion sort
+* Since INSERTION-SORT has a worst-case running time that is both 𝑂(𝑛2) and Ω(𝑛2), we can conclude that its worst-case running time is Θ(𝑛2).
+
+#### O-notation proof and other content
+**CHECK SLIDES OFR FORMAL IMAGES AND EXAMPLES OF NOTATIONS**
+* ![proof](proofONotation.JPG)
+* other proofs are similar to this one
+* O f(n) is less than cg(n)
+* Ω f(n) is more than cg(n)
+* Θ f(n) is sandwiched between c1g(n) and c2g(n)
