@@ -153,3 +153,49 @@
 * O f(n) is less than cg(n)
 * Ω f(n) is more than cg(n)
 * Θ f(n) is sandwiched between c1g(n) and c2g(n)
+
+--------------------------
+# Monday January 29th
+--------------------------
+# Asymptotic Notations
+--------------------------
+* *Need to be careful when using asymptotic notation to be the most precise that you can be*
+* You can say: The worst-case running time for insertion sort is 𝑂(𝑛2), Ω(𝑛2), and Θ(𝑛2); all are correct. Prefer to say 𝛩(𝑛2) here, since it’s the most precise.
+* You can say: The best-case running time for insertion sort is 𝑂(𝑛), Ω(𝑛), and Θ 𝑛 . Prefer 𝛩 𝑛 , again more precise.
+* You cannot say: The running time for insertion sort is Θ(𝑛2), with “worst-case” omitted. Omitting the case means making a blanket statement that covers all cases, and insertion sort does not run in Θ(𝑛2) time in all cases.
+* You can say: The running time for insertion sort is 𝑂(𝑛2), or that it’s Ω(𝑛), because these asymptotic running times are true for all cases.
+
+### o-notation
+* **o-notation** : characterizes a strict upper bound on the asymptotic behavior of the function
+    * **O-Notation** : can be considered <=
+        * 𝑓 𝑛 = 𝑂(𝑔(𝑛)): function 𝑓 𝑛 grows no faster than 𝑔(n)
+    * **o-Notation** : can be considered <
+        * 𝑓 𝑛 = 𝑂(𝑔(𝑛)): function 𝑓(𝑛) grows strictly slower than 𝑔(n)
+    * ![littleo](littleo.JPG)
+### 𝜔-notation
+* **𝜔-notation** : characterizes a strict upper bound on the asymptotic behavior of the function
+    * **Ω -Notation** : can be considered >=
+        * 𝑓 𝑛 = 𝑂(𝑔(𝑛)): function 𝑓 𝑛 grows at least as fast as 𝑔(n)
+    * **𝜔-Notation** : can be considered >
+        * 𝑓 𝑛 = 𝑂(𝑔(𝑛)): function 𝑓(𝑛) grows strictly faster than 𝑔(n)
+    * ![need to airdrop this image here from the phone]()
+### Comparison of functions
+* transitive
+* symmetric
+* reflexive
+* transpose symmetry
+
+### dichotomy property
+* comparison between two functions f and g and the comparison of two real numbers
+* ![compare](comparingNum.png)
+* for real numbers either a <= b or a >= b
+
+### Growth of functions
+* ![runtime](runtimeDiag.png)
+* base of a log doesnt matter asymptotically but the base of exponential and the degree of a polynomail or polylog do matter asymptotically
+* ![logProps](logProps.png)
+* lg = log base 2
+* 2^lg(n) = n
+* (sqrt(2))^lg(n) = sqrt(n)
+**order of growth highest to lowest**
+* n! e^n 2^n n^3 n^2 nlg(n) { 2^lgn n } (sqrt(2))^lgn) lg^2(n)
