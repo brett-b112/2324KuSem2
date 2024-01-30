@@ -222,3 +222,63 @@
     * invert digits and add one
     * eliminate negative zero and make arithmetic in hardware easier
     * 0b means binary and 0x means hex
+---------------
+# **Tuesday January 30th**
+---------------
+# **Computer Language**
+---------------
+![2creview](2cReview.png)
+
+### **Fractional Numbers: Float and Double**
+* **Float**
+   ( *IEEE 754 single precision floating point numbers*)
+    * 1-bit sign, 8-bits exponent, 23-bits fraction
+    * 6 significant decimal digits of precision
+* **Double**
+    * 1-bit sign, 11-bits exponent, 52-bits fraction
+    * 15-17 significant decimal digits of precision
+![decToBinary](decToBinary.png)
+
+## The Language of the Computer
+---------------------------------
+
+### **The Software stack**
+* Application Software
+    * word processro, internet browser
+* System software
+    * OS, compilterç
+* Hardware
+    * Processor, memory, IO
+
+### **The Software stack**
+* MIPS (Microprocessor without Interlocked Pipelined Stages
+* widely used by the embedded market (hardware dudes)
+![branches](branches.png)
+
+### **Opcode nad Operand**
+* **Opcode** : operation that is executed by the CPU (ex: add, sub)
+* **Operand** : data or memory location used to execute that operation
+![compSys](computerSys.png)
+* Register is the TEMP
+### **Registers**
+* **Registers**
+* limited numver of memory location connected to ALU
+* MIPS32 (MIPS) has 32 registers (there is also MIPS64)
+    * Each of the 32 registers hold 32 bits
+    * **C Code**
+        * A = B + C;
+        * A = B - C;
+    * **MIPS Code**
+        * add $r1, $r2, $r3
+        * sub $r1, $r2, $r3
+* different register values hold different usages
+![memory](memory.png)
+* C code: g= h + A[7]; //first element is A[0]
+* MIPS code:
+    * lw $t0, 32($s1) //32 because 8 elements
+    * add $t0, $s2, $t0
+        * 32 because you have to move 32 because each address has 4 bytes
+        * this is saying that you are loading the value of the eight element of a to register t0
+        * you are adding the two elements to t0
+    * sw $t0, 48($s1)
+        * This part of code sends/stores the value at A[12]
