@@ -199,3 +199,31 @@
 * (sqrt(2))^lg(n) = sqrt(n)
 **order of growth highest to lowest**
 * n! e^n 2^n n^3 n^2 nlg(n) { 2^lgn n } (sqrt(2))^lgn) lg^2(n)
+
+--------------------------
+# Wednesday January 31st
+--------------------------
+# Recurrence
+--------------------------
+![tailopez](knowledge-tai-lopez.gif)
+
+### Conventions
+* dont need to state explicit base cases
+![convention1](recurrenceConventino.png)
+* state asymptotic notaiton without the ceilings and floors
+
+#### Four methods for solving recurrences
+* **substitution method** : guess the soltuiuonthen use induction to prove the solution is correct
+* **recursion-tree method** : Draw out a recursion tree,
+determine the cost at each level, and sum them up. This is useful for understanding of the recurrence and coming up with a guess for the substitution method
+* **Master Method** :  A cookbook method for solving recurrence of the form 𝑇(𝑛) = 𝑎𝑇(𝑛/𝑏) + 𝑓(𝑛), where 𝑎 > 0 and 𝑏 > 1 are constants, subject to certain conditions
+* PROOFS on slides (idk if we'll need to know those he said at the beginning that we didn't
+![recursionTreeMethod](recursionTreeMethod.JPG)
+![masterMethod](MasterMethod.png)
+![masterCookbook](masterCookbook.png)
+# THIS IS TEST CONTENT ^^^^^^^
+## MEMORIZE THE THREE FORMS ANALYZE THE CASE AND APPLY IT DIRECTLY
+![mmEx1](mmEx1.png)
+![mmEx1](mmEx2.png)
+![mmEx1](mmEx3.png)
+![mmEx1](mmEx4.png)
