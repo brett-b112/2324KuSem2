@@ -282,3 +282,33 @@
         * you are adding the two elements to t0
     * sw $t0, 48($s1)
         * This part of code sends/stores the value at A[12]
+---------------
+# **Thursday Feburary 1st**
+---------------
+# **Language of the Computer**
+---------------
+
+### How bytes of a word are organized in memory?
+* **Big Endian** : most significant bit is stored at the lowest memory address. Ex: PowerPC
+* **Little Endian** : Just reverse of big Endian Ex: Intel , x86 processors, ARM
+* ![endian](endian.png)
+* ![Practice](PracticeProbRegister.png)
+### Assembly to binary translation
+* **Basic Instruction formats**
+    * R (r type) -> opcode rs rt rd shamt funct
+    * I (i type) -> opcode rs rt immediate
+    * J (j type) -> opcode address
+* ![rtype](rType.png)
+* ![MIPS](MIPS.png)
+* MIPS Instruction: addi $s3, $s3, 22 -> (adds 22 to s3)
+* ![logicOp](logicOp.png)
+* **Bitwise AND/OR**
+    * and $t0,$t1,$t2    #reg t0 = reg t1 & reg t2
+    * 1000 and 0111 = 0000
+    * 1 and 0 = 0 or 0 and 0 = 0
+    * 1 and 1 = 1
+* **Bitwise Shfits**
+    * sll = left shift (<<)
+    * srl = right shift (>>)
+    * sll $t2,$s0,4 -> reg t2 = reg s0 shifted 4 bits
+    * ![branchMIPS](branchMIPS.png)
