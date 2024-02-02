@@ -223,7 +223,44 @@ determine the cost at each level, and sum them up. This is useful for understand
 ![masterCookbook](masterCookbook.png)
 # THIS IS TEST CONTENT ^^^^^^^
 ## MEMORIZE THE THREE FORMS ANALYZE THE CASE AND APPLY IT DIRECTLY
+    for the master method the driving function is the f(n) term and the watershed function is the n^(logb(a)) fuction ==> in each of the cass you are comparing the watershed function to the driving function
+    the final answer is givin by the f(n) however, you have to increase the polylog function by one
+    if f(n) = n^2/(lg(n)) then the power of the lg function is -1 so case 2 doesnt apply and furhter the master method doesnt apply
 ![mmEx1](mmEx1.png)
 ![mmEx1](mmEx2.png)
 ![mmEx1](mmEx3.png)
 ![mmEx1](mmEx4.png)
+
+--------------------------
+# Friday Feburary 2nd
+--------------------------
+# Divide and Conquer Algorithms
+--------------------------
+
+### Binary Search
+1. **Divide** : check middle element
+2. **Conquer** : Recursivelt search a subarray (left or right)
+3. **Combine** : Trivial (do nothing)
+* https://www.youtube.com/watch?v=fDKIpRe8GW4&ab_channel=MichaelSambol
+![binaryS](binarySearch.jpg)
+
+### Matrix Multiplication
+    matrixMultiply(A,B,C,n)
+        for i = 1 to n
+            for j = 1 to n
+                for k = 1 to n
+                    cij = cij + aik * bkj
+* triple for loop is the algorithm
+* Θ(n^3)
+* **divide and conquer algorithm for Matrix Multiplication**
+    * divide a nxn matrix into 2x2 matrix of (n/2) x (n/2) submatrices:
+    * ![matmult](MatrixMult.png)
+    * Recurrence: T(n) = 8 T(n/2) + /theta(1)
+    * because of 8 submatrix multiplications and submatrix size of n/2 and adding 1 for dividing matries
+    * with the **master method** using case 1 we know the runtime is /theta(n^3)
+* **Strassen's Algorithm**
+    * *idea* : reduce submatrix multiplications by using more submatrix additions because thye cost less compute power
+    * similar to --> x^2 + y^2 = (x-y)(x+y)
+    * Recurrence: T(n) = 7 T(n/2) + /theta(n^2)
+    * watershed = n^2.807 f(n) = n^2
+    * bigtheta(n^2.807)
