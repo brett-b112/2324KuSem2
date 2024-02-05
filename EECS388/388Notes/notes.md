@@ -312,3 +312,14 @@
     * srl = right shift (>>)
     * sll $t2,$s0,4 -> reg t2 = reg s0 shifted 4 bits
     * ![branchMIPS](branchMIPS.png)
+
+---------------
+# **Monday Feburary 5th**
+---------------
+# **Randomized Algorithms**
+---------------
+
+### The hiring problem
+* Hiring a new person you are given one candidate each day for a total of *n* days (*n candidates*)
+* If you hire you must fire the current person
+* ![cost](costCand.png)
