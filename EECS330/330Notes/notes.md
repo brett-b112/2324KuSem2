@@ -264,3 +264,48 @@ determine the cost at each level, and sum them up. This is useful for understand
     * Recurrence: T(n) = 7 T(n/2) + /theta(n^2)
     * watershed = n^2.807 f(n) = n^2
     * bigtheta(n^2.807)
+---------------
+# **Monday Feburary 5th**
+---------------
+# **Randomized Algorithms**
+---------------
+
+### The hiring problem
+* Hiring a new person you are given one candidate each day for a total of *n* days (*n candidates*)
+* If you hire you must fire the current person
+* ![cost](costCand.png)
+* strategy is to hire the best candidate seen so far that is better than the current employee which you must fire
+* becaue you must have someone hired you will hire the first candidate interviewied.
+* ![hireCode](hirePsuedo.png)
+    * There are n candidates total and you hire m of them (m <= n)
+    * O(ci(n) + ch(m))
+        * The **total interview** cost ci(n) is fixed (because n is)
+        * **hiring cost** is dependent on m
+        * ![hireEx](hireEx.png)
+        * You take the higher level interviewee.
+    * **Worst case**
+        * In reverse order so you hire all of the people (ch(n))
+    * **Probabilistic Analysis**
+        * make assumptions about the distributions of the input by using the average over all possible inputs (**average-case run time**)
+        * all n! permutations of their ranks (1,2,3,....,4) are equally likely
+        * ![pa](pa.png)
+    * **Indicator Random Variable**
+        * Provides a convenient method for converting between Probabilities(Pr) and expectations (E).
+        * ![ira](iraProof.png)
+    * **Coin Flip Problem**
+        * ![coinFlip](coinFlip.png)
+    * **Back to the Hiring Problem**
+        * **What is the probability that candidate i is hired?**
+            * For candidate i = 1,2,....,n define Xi = I{candidate is hired} as an indicator random variable
+            * E[Xi] = Pr{Candidide i is hired} = 1/i
+            * this means 10 candidates => 1/10 chance of gettign hired
+            * The first i candidates are all equally likely to be the best candidate
+        * ![hiringProb](hiringProbSummation.JPG)
+    * **From Probalisitic Analysis to Randomized Algorithm**
+        * **Probablisitc Analysis**
+            * Assumesk knowledge of distribution input
+        * **Randomized Algorithm**
+            * Uses randomization to enforce a distribution on the inputs inside the algorithm instead of in the input
+            * for psuedo start with randomly permute (change the order) the list of candidates
+            * random permutations ensure that it is not the worst case
+    *![vocab](analysisVocab.png)

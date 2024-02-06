@@ -312,14 +312,32 @@
     * srl = right shift (>>)
     * sll $t2,$s0,4 -> reg t2 = reg s0 shifted 4 bits
     * ![branchMIPS](branchMIPS.png)
+    jumping to L
+### Multiplication is with a right shift
+    this only works with unsigned numbers because the sign will be lost
+* ![leftShift](leftShift.png)
+### Division is a right shift
+    this only works with unsigned numbers again
+* ![rightShift](rightShift.png)
+* ![uncJump](uncJump.png)
+### Loops
+* ![LoopsAssem](LoopsAssem.png)
+* ![LoopsAssemDesc](LoopsAssemDesc.png)
+
+### Control Flow
+* Set on less than (slt)
+* this can be used to compare two registers for greater or less than
+* no set greater than because the simpler the hardware the better the clock speed (**lightning fast**)
+    * ![slt](slt.png)
+* comparing constants with variables we use slti
+*       slti $t0,$s2,10
+   this is the same as saying
+*       t0 = 1 if s2 < 10
+
 
 ---------------
-# **Monday Feburary 5th**
+# **Tuesday Feburary 16th**
 ---------------
-# **Randomized Algorithms**
+# ****
 ---------------
-
-### The hiring problem
-* Hiring a new person you are given one candidate each day for a total of *n* days (*n candidates*)
-* If you hire you must fire the current person
-* ![cost](costCand.png)
+**Most of the content was from lecture slides 5 so I includd it in the previoous day! Happy assembly!**
