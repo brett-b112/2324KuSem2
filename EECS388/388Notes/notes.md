@@ -341,3 +341,4 @@
 # ****
 ---------------
 **Most of the content was from lecture slides 5 so I includd it in the previoous day! Happy assembly!**
+* check the MIPS cheat sheet and add it here and add the table from the last slide in lecture 5

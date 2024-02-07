@@ -309,3 +309,37 @@ determine the cost at each level, and sum them up. This is useful for understand
             * for psuedo start with randomly permute (change the order) the list of candidates
             * random permutations ensure that it is not the worst case
     *![vocab](analysisVocab.png)
+
+---------------
+# **Wednesday Feburary 7th**
+---------------
+# **Quick Sort**
+---------------
+### Mood for this lecture
+ ![zukc](zuck.gif)
+### We grilling some mf meats
+
+### Quciksort
+* **Quicksort** is a sorting algo that uses divide and conquer
+* This 4 minute video prob better than the whole lecture
+https://www.youtube.com/watch?v=Hoixgm4-P4M&ab_channel=MichaelSambol
+* Quicksort uses a **PARTITION** that selects a **pivot** value **THE LAST VALUE** and rearranges the elements on either side of the partition recursively
+    * ![quicksort](quicksort.png)
+* **Worst Case Runtime**
+    * The partitioning is **completely unbalanced**
+    * each partition has 0 on one side and n-1 elements on the other
+    * ![quickWorst](quickWorst.png)
+    * /theta(n^2)
+* **Best Case Runtime**
+    * The partitioning is **completely balanced**
+    * each partiion has roughly n/2 elements
+    * ![quickMM](quickMM.png)
+    * /theta(nlgn) ---> Case #2 of the master method
+* **Average Case Runtime**
+* **AVERAGE**
+    * much closer to the best case
+    * ![quickAvg](quickAvg.png)
+    * Any split of **constant proportionality** yields a runnign time of O(nlgn) the ratio only affects the constant which has no affect asymptotically i.e. /theta
+
+### Randomized Quicksort
+* To enforce an input distribution, we can again randomize the algorithm, and get the same expected running time 𝑂 𝑛 lg 𝑛
