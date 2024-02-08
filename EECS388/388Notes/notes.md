@@ -342,3 +342,59 @@
 ---------------
 **Most of the content was from lecture slides 5 so I includd it in the previoous day! Happy assembly!**
 * check the MIPS cheat sheet and add it here and add the table from the last slide in lecture 5
+
+---------------
+# **Tuesday Feburary 16th**
+---------------
+# **Functions**
+---------------
+
+### Function call or Procedures
+* A function makes code reusable
+
+### Memory Map of Running a Program
+![memMap](memoryMap.png)
+1. Static
+    * Text/Code segment
+    * Intialized data segment
+    * Unintialized data segment
+2. Stack
+3. Heap
+* ![MemoryAlloc388](MemoryAlloc388.png)
+**Program Counter (PC)**
+    * Register that holds addresses of instructions and incremented after fetching instruction
+
+### Caller and Callee
+* if main() calls sum()
+    * main is caller and sum is callee
+    * Caller use the same register set as teh callee
+
+### Callign a Fucntion
+![callFunc](callFunc.png)
+
+### Instructions to use to execute a jump
+![jumpIns](jumpIns.png)
+
+### Register Management
+![registerManagement](RegisterManagmenet.png)
+
+### Answerin Questions on the previous slide
+* Who is responsible for saving important registers across function calls
+    * The **caller** knows which registers are important sand should be saved
+    * The **callee** knows what registers it will use and overwrite
+* However, inthe rtpical "black box" proramming approach teh caller adn teh callee do not know anything about each others' implementation
+    * Difference functions can be written by different people but should stil run regardless when compiled
+
+### So how do functins cooperate and share registers when they don't know anything about each other?
+* **Approach 1:**
+    * The caller saves registes to ensure they are not written
+    * ![app1](app1.png)
+    * main is trying to preserve a0 a1 s0 s1 by giving it arbitrary values
+* **Approach 2:**
+    * Callee save all registers
+    * ![app2](app2.png)
+* **Best Approach**
+    * ![appB](appB.png)
+
+### Accessing and Popping Elements
+* ![stackPop.jpg](stackPoing.jpg)
