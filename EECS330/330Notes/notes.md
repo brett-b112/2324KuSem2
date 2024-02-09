@@ -343,3 +343,50 @@ https://www.youtube.com/watch?v=Hoixgm4-P4M&ab_channel=MichaelSambol
 
 ### Randomized Quicksort
 * To enforce an input distribution, we can again randomize the algorithm, and get the same expected running time 𝑂 𝑛 lg 𝑛
+
+---------------
+# **Friday Feburary 9th**
+---------------
+# **Heapsort**
+---------------
+    Mood for todays heaps
+![max](maxV.gif)
+
+### Heap
+* **Binary Heap** data structure is an array object which can also be viewed as *(nearly) complete binary tree*
+    * Each node of the tree corresponds to an element of the array
+    * It is filled on all levels except the lowest level
+    * lowest level is filled from left to right
+    * ![heap.png](heap.png)
+* **Indexes**
+    * Parent(i) = i//2
+    * Left(i) = 2i
+    * Right(i) = 2i+1
+* **Array View**
+    * Array is represneted as A[1:n] with n elements
+* **Heap View**
+    * Heap has an attribute A.heap-size which repreenst the number of valid elements
+    * 0 < A.heap-size <= n
+* **Height**
+    * for mostly complete ---> Θ(lg 𝑛)
+    * ![macHeapp](macHeapp.jpg)
+* **Mn Max Heaps**
+    * ![minmax.jpg](minmax.png)
+* **Max Heapify**
+    * Recursive procedure that maitains the amx-heap rpoperty for a heap A on index i by:
+        * Binary trees rooated at Left(i) and right(i) the two childern off of the root
+        * But A[i] the root may be smaller than its children thus violating the max heap property
+        * ![heapify](heapify.JPG)
+    * ![maaax.jpg](maaax.png)
+    * **Runtime**
+        * O (lgn)
+        * *because it has a height of h and h =lgn but its big O because you might not always go down to a leaf*
+* **Building a Heap**
+    * **Max Heapify** builds a heap from the bottom up
+    * ![buildHepa](buildHeap.png)
+    * You start at the n//2 index because that is where the last parent node would be the higher indexes wouldnt have children (in this scenario index 5)
+### Heap Sort
+* ![heapsory](heapsory.png)
+
+### Why is heapsort correct?
+* ![heapsory](heapsortCorrect.png)
