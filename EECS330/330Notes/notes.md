@@ -390,3 +390,52 @@ https://www.youtube.com/watch?v=Hoixgm4-P4M&ab_channel=MichaelSambol
 
 ### Why is heapsort correct?
 * ![heapsory](heapsortCorrect.png)
+---------------
+# **Monday Feburary 12th**
+---------------
+# **Started class with heapsort however, he hasnt posted the following slides**
+---------------
+###### *Mood today with a chiefs superbowl win*
+![patM](patM.gif)
+* ### Heapsort info
+    * *Watch his video below for heapsort*
+    * https://www.youtube.com/watch?v=2DmK_H7IdTo&ab_channel=MichaelSambol
+    * ![heapRun](heapRuntime.JPG)
+### Comparing Sorting Algos
+* ![comparRuntime](compareRuntime.png)
+### Sorting in Place
+* It is called in place if the sorting algo is done *directly on input array*
+    * Most in place sorting algos use Θ(1) of additional space making them *space efficient*
+* **Out of place sorting**
+    * Not sorted in place
+    * Θ(n) additional space to sort an array of n elements
+* ![sortPlaces](sortPlaces.png)
+
+### Prioriy Queues
+* Another popular application of heap is to use it as efficient priority queue, which is a data structure for maintaining a set 𝑆 of elements, each with an associated value called a key
+* Come in two forms
+    * Max-priority queues
+    * Min-priority queues
+### Max priorirty queue
+* supports
+*Underflow means that we check if the heap is empty*
+    * max -> returns element with largest key
+        * Runtime: Θ(1)
+        * ![maxHeapMax](maxHeapMax.png)
+    * extract-max -> removes and returns item with largest key
+        * Running time: 𝑂(lg(𝑛)) , since MAX-HEAPIFY take 𝑂(lg(𝑛)) time
+        * ![extract](maxHeapExtract.png)
+    * increase-key -> increase value of element x's key to k with k >= x
+        * Running time: 𝑂(lg(𝑛)) , since the height of heap is 𝑂(lg(𝑛)) and assuming finding element 𝑥 in the array takes Θ(1) time
+        * ![increase](increaseKey.png)
+        * ![increase](IOKey.png)
+    * insert -> inserts element with key in the set
+        * Running time: 𝑂 lg 𝑛 , since MAX-HEAP-INCREASE- KEY takes 𝑂 lg 𝑛 time
+        * ![maxhi](maxHeapInc.png)
+![maxheapsummary](maxHeapSummary.png)
+
+### Scheduling jobs on a computer shared among multiple users.
+* The max-priority queue keeps track of the jobs to be executed and their relative priorities.
+* When a job is finished, the scheduler selects the highest-priority job from among those pending by calling EXTRACT-MAX.
+* When a job has been pending for a long time, its priority can be increased by calling INCREASE-KEY.
+* The scheduler can add a new job to the queue at any time by calling INSERT
