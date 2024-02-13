@@ -398,3 +398,39 @@
 
 ### Accessing and Popping Elements
 * ![stackPop.jpg](stackPoing.jpg)
+
+---------------
+# **Tuesday Feburary 13th**
+---------------
+# **Introduction to computing systems**
+---------------
+*I got super lazy here are all the slides LOL this should print nicely for exam*
+![slides](./Lecture7/Slide2.jpeg)
+![slides](./Lecture7/Slide3.jpeg)
+![slides](./Lecture7/Slide4.jpeg)
+![slides](./Lecture7/Slide5.jpeg)
+![slides](./Lecture7/Slide6.jpeg)
+![slides](./Lecture7/Slide7.jpeg)
+![slides](./Lecture7/Slide8.jpeg)
+![slides](./Lecture7/Slide9.jpeg)
+![slides](./Lecture7/Slide10.jpeg)
+![slides](./Lecture7/Slide11.jpeg)
+![slides](./Lecture7/Slide12.jpeg)
+![slides](./Lecture7/Slide13.jpeg)
+![slides](./Lecture7/Slide14.jpeg)
+![slides](./Lecture7/Slide15.jpeg)
+![slides](./Lecture7/Slide16.jpeg)
+![slides](./Lecture7/Slide17.jpeg)
+![slides](./Lecture7/Slide18.jpeg)
+![slides](./Lecture7/Slide19.jpeg)
+![slides](./Lecture7/Slide20.jpeg)
+![slides](./Lecture7/Slide21.jpeg)
+![slides](./Lecture7/Slide22.jpeg)
+![slides](./Lecture7/Slide23.jpeg)
+![slides](./Lecture7/Slide24.jpeg)
+![slides](./Lecture7/Slide25.jpeg)
+![slides](./Lecture7/Slide26.jpeg)
+![slides](./Lecture7/Slide27.jpeg)
+![slides](./Lecture7/Slide28.jpeg)
+![slides](./Lecture7/Slide29.jpeg)
+![slides](./Lecture7/Slide30.jpeg)
