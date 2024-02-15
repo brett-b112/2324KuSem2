@@ -434,3 +434,35 @@
 ![slides](./Lecture7/Slide28.jpeg)
 ![slides](./Lecture7/Slide29.jpeg)
 ![slides](./Lecture7/Slide30.jpeg)
+
+---------------
+# **Thursday Feburary 15th**
+---------------
+# **Lecture 8 Digital Logic and Design**
+---------------
+![slides](./Lecture8/Slide2.jpeg)
+![slides](./Lecture8/Slide3.jpeg)
+![slides](./Lecture8/Slide4.jpeg)
+![slides](./Lecture8/Slide5.jpeg)
+![slides](./Lecture8/Slide6.jpeg)
+![slides](./Lecture8/Slide7.jpeg)
+![slides](./Lecture8/Slide8.jpeg)
+![slides](./Lecture8/Slide9.jpeg)
+![slides](./Lecture8/Slide10.jpeg)
+![slides](./Lecture8/Slide11.jpeg)
+![slides](./Lecture8/Slide12.jpeg)
+![slides](./Lecture8/Slide13.jpeg)
+![slides](./Lecture8/Slide14.jpeg)
+![slides](./Lecture8/Slide15.jpeg)
+![slides](./Lecture8/Slide16.jpeg)
+![slides](./Lecture8/Slide17.jpeg)
+![slides](./Lecture8/Slide18.jpeg)
+![slides](./Lecture8/Slide19.jpeg)
+![slides](./Lecture8/Slide20.jpeg)
+![slides](./Lecture8/Slide21.jpeg)
+![slides](./Lecture8/Slide22.jpeg)
+![slides](./Lecture8/Slide23.jpeg)
+![slides](./Lecture8/Slide24.jpeg)
+![slides](./Lecture8/Slide25.jpeg)
+![slides](./Lecture8/Slide26.jpeg)
+![slides](./Lecture8/Slide27.jpeg)
