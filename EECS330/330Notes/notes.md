@@ -533,3 +533,85 @@ if (Q.head == Q.tail + 1) or (Q.head ==1 and Q.tail == Q.size):
 **For Dequeue**
 if Q.head == Q.tail:
     error "underflow"
+
+---------------
+# **Friday Feburary 16th**
+---------------
+# **Data Structures**
+---------------
+
+### Linked Lists
+* Data strcutue for dynamic sets in which elemnts are arranged in a linear order (as in an array)
+    * For an *array* the linear order is determined by array indicues
+    * for  *linked list* the linear order is determined by pointers
+    * can be sorted or unsorted
+    * can be doubly or single linked list
+### Singly Linked Lists
+* Each element has a pointer to the net elemnet but none to the previous
+### Doubly Linked Lists
+* Pointer to both next and previous elemnets
+* 𝐿, each element 𝑥 has a 𝑘𝑒𝑦 attribute and two pointer attributes: 𝑛𝑒𝑥𝑡, 𝑝𝑟𝑒𝑣
+* x.next points to next if == NIL its the last value
+* x.prev points to previous if == NIL its the first value
+* L.Head poiints ot first element if == NIL lsit is empty
+
+# ALL THE FOLLOWING EXAMPLES ARE WITH DOUBLY LINKED LISTS
+
+### Searching a doubly linked list
+    List_search(L,k)
+        x = L.HEAD
+        while x != NIL and x.key != k
+            x = x.next
+        return x
+* Θ(n) for worst time
+
+### Adding to the front of a doubly linked list
+    List_prepend(L,x):
+        x.next = L.Head
+        x.prev = NIL
+        if L.Head != NIL
+            L.head.prev = x
+        L.head = x
+* Θ(1) for time
+
+### Inserting into a doubly linked list
+    List_Insert(x,y)
+        x.next = y.next
+        x.prev = y
+        if y.next != NIL
+            y.next.prev = x
+        y.next = x
+* Θ(1) for time
+
+### Deleting from a doubly Linked List
+    List_Delete(L,x)
+        if x.prev != NIL
+            x.prev.next = x.next
+        else
+            L.head = x.next
+        if x.next!= NIL
+            x.next.prev = x.prev
+* Θ(1) for time
+
+### Sentinels
+* A dummy element in a data structure that allows us to simply boundry conditions
+* In the context of a linked list a sentinel is L.nil that represents NIL but has all other attributes of elements in the list
+* references to NIL are replaces with sentinel L.nil
+* **Turns the regular doubly linked listed into a cirecular doubly linked list (with a sentinel) where L.nil is between head and tail of the list.
+    * ![](sentinel.png)
+### How do Snetinels simplify code?
+* ![SimplyifyJobsCode](sentSimp.png)
+* ![SimplyifyJobsCode](sentSimp2.png)
+### When shoudl we use them?
+* Pro
+    * Simplify code
+    * speed up code by constant factor
+* Cons
+    * When there are small lists the extra storage used by sentiels is significant wasted memory
+
+### Arrays vs Linked List
+* Both dictionary like
+* Arrays are easier to implement, fixed length
+* Linked Lists are more flexible, flexible length
+* ![compare](compare1624.png)
+* ![compare](compare021624.png)
