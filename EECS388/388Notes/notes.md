@@ -376,7 +376,7 @@
 ![jumpIns](jumpIns.png)
 
 ### Register Management
-![registerManagement](RegisterManagmenet.png)
+![registerManagement](registerManagement.png)
 
 ### Answerin Questions on the previous slide
 * Who is responsible for saving important registers across function calls
