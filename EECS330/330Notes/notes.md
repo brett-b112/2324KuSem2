@@ -615,3 +615,63 @@ if Q.head == Q.tail:
 * Linked Lists are more flexible, flexible length
 * ![compare](compare1624.png)
 * ![compare](compare021624.png)
+
+---------------
+# **Monday Feburary 16th**
+---------------
+# **Binary Search Trees**
+---------------
+
+### Tree
+* Data structure for dynamic sets in which objects are not in a linear relationship like linked list
+* key attribute and pointer attributes to other nodes
+* **Two Types**
+    * binary (at most 2 childer)
+    * unbounded (no limit of kids nick cannon style)
+    **Binary Tree Diagram**
+    * ![binaryTree](binaryTree.png)
+    **Unbound Binary Tree Diagram**
+    * ![unboundbinaryTree](unboundBinaryTree.png)
+    * **Depth**
+        * length of the simple path from root to node
+    * **height*
+        * length of the longest simple path from the node to a leaf
+### Binary Search Tree
+* Satisfies:
+    * if x is a node and if y is a node in the left subtree of x then y.key <= x.key
+    * if x is a node and if y is a node in the right subtree of x then y.key >= x.key
+* ![](exBST.png)
+### In order Tree walk
+* ![](inorder.png)
+## Ex tree used for walks
+* ![](exWalk.png)
+### In order Tree walk
+* left subtree, node, right subtree
+* Output: 2,5,5,6,7,8
+### Preorder Tree Walk
+* Node, left subtree, right subtree
+* Output: 6, 5, 2, 5, 7, 8
+### Postorder Tree Walk
+* left subtree, righ subtree, node
+* Output: 2, 5, 5, 8, 7, 6
+### Tree Searching
+* ![searching](treeSearch.png)
+### Tree minimum and Tree Maximum
+* ![minMax](treeMinMax.png)
+### Successor and Predecessor
+* **Successor**
+**RUnning time of O(h)
+    * next node visited in an inorder walk
+    * !(successor)[treeSuccessor.png]
+    * **Two Cases**
+        * Case 1
+            * If the right subtree of 𝑥 is not empty, then the successor is the leftmost (smallest) node in 𝑥’s right subtree
+            * simpel path down the tree
+            * !(succ1)[treeSuccCase1.png]
+        * Case 2
+            * If the right subtree of 𝑥 is empty, then the successor is the lowest ancestor of 𝑥 whose left child is also an ancestor of 𝑥 (i.e., climb up the tree and stop after the first right turn)
+            * Simple path up the tree
+            * !(succ2)[treeSuccCase2.png]
+* **Predecessor**
+    * preceding node visited in an inorder walk
+    * ![](predecessor.jpg)
