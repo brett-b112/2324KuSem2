@@ -466,3 +466,71 @@
 ![slides](./Lecture8/Slide25.jpeg)
 ![slides](./Lecture8/Slide26.jpeg)
 ![slides](./Lecture8/Slide27.jpeg)
+
+---------------
+# **Tuesday Feburary 20th**
+---------------
+# **Memory Technologies and Hierarchy**
+---------------
+    Store --> Memory
+    Load <--- Memory
+### Data Storage Technologies/Approaches
+* Flip-Flops
+    * Very Fast
+    * Very Expensive - 46 transistors for a D flip Flop
+* Static RAM (SRAM)
+    * Fast
+    * expensive - 6 transistors per bit
+* Dynamic RAM (DRAM)
+    * Slow, destructive read
+    * Cheap - one transistor + one capacitor per bit
+* Flash
+    * Very slow, non-volant
+    * cheap
+* ![diag](storageDiag.png)
+### Types of Memories
+![typeOfMemory](typeOfMemory.png)
+
+### Array Organization of Memories
+* Components
+    * A memory Array
+    * Address decoder
+    * I/O circutry
+* M-bit data can be stored/loaded in/from at each unique N-bit address
+    * Addressability: M bits
+    * Address space: 2^N unique adresses
+### Memory Array Organization
+* **Row Decoder**
+![typeOfMemory](typeOfMemory.png)
+
+### Memory Array Folding
+* The row decoder uses the address to activate one of the rows by asserting the wordline
+* Array is often folded into fewer rows of more columns.Column decode is need to choose between multiple data lines
+* ![arrFold](arrFold.png)
+
+### Memory Read Example
+* ![memeRead](memRead.png)
+
+### DRAM Memory Technology
+* Dynamic random-access memory
+* Capacitor cahrge state indicates tored value
+    * charged 1
+    * discharded 0
+    * 1 capacitor
+    * 1 access transistor
+* Capacitor Leaks
+    * DRAM cell loses charge over time
+    * DRAM cell needs to be refreshed
+### Workign of the memory cell
+* ![](memCell.png)
+
+### Read DRAM
+* ![](readDRAM.png)
+* Read process was desctructive
+* It charged/discharged some Cpa
+* we must write back after read
+    * The correct data is in SA
+* Write form SA to impacted row
+
+### SRAM Memory Technology
+* ![](SRAM.png)
