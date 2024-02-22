@@ -534,3 +534,114 @@
 
 ### SRAM Memory Technology
 * ![](SRAM.png)
+
+---------------
+# **Thursday Feburary 22nd**
+---------------
+# **Memory Hierarchy and Address Space**
+---------------
+
+### MROM/EPROM/EEPROM
+* Mask ROM (MROM)
+    * Non programmable read only memory
+    * its cheap
+* EPROM
+    * Erase by using UV light
+    * Erasable programmable read-only memory
+* EEPROM
+    * Electrically erasable programmable read-only memory
+    * Can be reprogrammed many times
+    8 Can be erased at byte granularity
+* All are often used t ostore small read-only code
+    * i.e. Boot loader
+
+### Flash Memory
+    Two types of flash memory
+* NOR Flash ( e.g. S70GL02GT Cypress device)
+    * ReadReads at byte granularity
+    * Fast random reads (~120ns)
+    * slow writes (~520ms to erase 120KB)
+    * Lesser density
+    * Primarily used as code storage
+* NAND Flash (S34ML04G2 Cypress device)
+    * Page addressable (e.g., 512 Bytes )
+    * Slow random reads (~30us)
+    * fast writes (~3.5ms to erase 120KB)
+    * Higher density
+    * Primarily used as data storage 4
+### Solid-State Disk (SSD) / eMMC
+* ![eMMC](eMMc.png)
+
+### Memory Hierarchy
+* ![memHark](memHark.png)
+
+### Analogy
+* the memory hierarch is similar to a library
+* this is used to spped up and keep costs low
+    * hands = Register 1 book
+    * Table = SRAM Up to 4 books
+    * Book Trolly = DRAM Up to 8 books
+    * Bookshelf = SSD ALL Books
+### Why to implement the memory subsystem hierarchy?
+    Locality of Reference
+* Temporarl locality
+    * reference same meory location many times (close together, in time)
+* Spatial Locality
+    * Reference near neighbors around the same time
+
+### Temporal Locality
+* ![tmepLocal](tempLocal.png)
+
+###  Spatial Locality
+* ![spatLocal](spatLocal.png)
+
+# EXAMPLE QUESTION
+Do we need to have a memory hierarchy if CPU is slower than our slowest
+memory technology? E.g., if we have a CPU with clock frequency of 1 HZ
+and a non-volatile memory with access latency of 0.1 sec. Explain a little bit
+##### Answer:
+No we do not need memory hieracrhcy because the CPU
+
+# Program Address Space
+
+### Memory Layout of C Programs
+    Typical memory representaion of a C program consists of thre broad regions
+1. Static Data
+    * fixed size, read only, exists for entier program
+    * text/code segment
+    * intialized data segment
+    * unitialized data segment
+## Text segment
+* containes executable instructions placed below heap or stack in order to prevent overflows
+* Often read only
+
+2. Stack
+    * variable size
+    * grows when alling function
+3. Heap
+    * variable size
+    grows when allocated in program
+![cStack](cStack.png)
+
+### Untialized Data Segment
+8 contains all global cariables and satci variables that are intialized to zero or do not have explicit intialization source code
+
+### Static Vars
+![staticVar](staticVar.png)
+
+### Stack Example
+    this example the bottom of the stack is on the top because that is where the word is
+![stackC](stackC.png)
+
+### Heap Example
+![heapC](heapC.png)
+
+### Data Memory (Data Segment)
+![dataMemC](dataMemC.png)
+
+### Memory Map
+    CPU's view ofthe physical hardware
+* Segregated with multiple regions
+* diff memory type for each region
+* each platform may have diff mappings
+![memMap](memMap.png)
