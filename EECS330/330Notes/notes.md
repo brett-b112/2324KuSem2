@@ -675,3 +675,108 @@ if Q.head == Q.tail:
 * **Predecessor**
     * preceding node visited in an inorder walk
     * ![](predecessor.jpg)
+
+---------------
+# **Friday Feburary 23rd **
+---------------
+# **Binary Search Tree**
+---------------
+
+### Insert
+* Inserts a new node z into tree T by tracing a simple path down the root based on the value of z.key and places z in an appropriate leaf position to maintain the binary-saerch-tree property
+* running time O(h)
+* ![insertBST](insertBST.png)
+* ![insertPS](insertPS.png)
+
+### Delete
+* Tree delete procedure deltees a node z from tree T.
+* Three Cases:
+    * Case 1
+        * If node z has no left child then repalce z by its right child (which could be NIL, meaning that z has no children)
+        * ![BSTDel1](BSTDel1.png)
+    * Case 2
+        * If node z has a left child but no right chhild then replace z by its left child.
+        * ![BSTDel2](BSTDel2.png)
+    * Case 3
+        * if node z has both a aleft child and a right child, then find z's successor y ( which must lie iin z's right subtree and has no left child)
+        * **Case 3.1:** if y is z's right child then repalce z by y. In this case, y adopts z's orgiinal left subtree as its own left subtree and y's orginal subtree is unchanged.
+            * ![BSTDel3](BSTDel3.png)
+        * **Case 3.2:** if y is not z's right child, then first replace y by its own right child x and then replace z by y. In this case y adopts z's original elft and right subtrees as its own left and right subtrees
+            * ![BSTDel32](BSTDel32.png)
+    #### Psuedo code
+    * ![BSTDelPs](BSTDelPs.png)
+    * if statement 1 is case 1
+    * elseif statement is case 2
+    * else is case 3
+        * last three liens are case 3.1
+        * entire if block in last else is case 3.2
+    #### Transplant
+    * replaces subbtree rooted at node u with subtree rooted at node v
+    * makes new parent node
+    * ![transplant](transplant.png)
+
+    ##### Run times
+    * Tree delete O(h), each line is /theta(1) even transplant
+    * tree minimum (line five) takes O(h)
+    * BST Operations
+        * all are O(h) runtime where height is h
+        * **Best case** allmost balanced  Θ lg 𝑛
+        * **Word Case** unbalanced like a line ℎ = Θ n
+### Balanced BSTs
+* AVL Tree
+    * each node the heights of its two children subtrees differ by at most 1
+* Red Blak Tree:
+    * each node has an extra "color" bit ("red" or "black") used to re-organize the tree to ensure its approx balance
+    * ![balanceBST](balanceBST.png)
+
+#### Rotation
+* Importatn operation used by balanced BSTs to maintain the follow properties:
+    * the height of the tree is always h = Θ lg 𝑛
+    * the binary search tree property
+    * ![BSTrotate](BSTrotate.png)
+    * ![rotatePS](rotatePS.png)
+### Working of balanced BSTs
+* The query operations wirh the same with ordinary bST (search, min, successor)
+* The modifying operation (insert, dlete) need to be augmented with roations to maintain desired properties.
+* someitmes need multiple rotations.
+---------------
+# **Wednesday Feburary 21st**
+---------------
+# **Skip Lists**
+---------------
+* Randomzied data structures that are built upon sorted linked lists but allow INSERT, DELETE, and SEARCH operations done in O(lg(n)) average time
+### Skip List Alternatives
+* Sorted Arrays
+* Binary Search Trees(O(Logn))
+* AVL Trees(O(lgn))
+* Treaps
+*![](skipListAlt.png)
+### Why choose skip list over other data structures?
+* More Dynamic than Sorted Arrays
+* Better Memory Efficiency than Tree-like Structures
+* Implementation with Concurrency and Parallelism
+* Simple Implementation
+* Approximation Queries are faster
+
+### Search in linked listes
+* takes O(n) time because you may have to go throguh the whole list
+
+### How ro speed up search with skip lists
+* Skip lists speed up search by mainting multiple lists and some lemenets appear in both connected by vertical links
+* ![skipListSearch](skipListSeach.png)
+
+### Time complexity for searching throguh a skip list
+* ![twoLists](twoLists.png)
+* In the general case
+* ![generalCase](generalList.png)
+
+### Dealing with Insert and Delete
+* INSERT and DELETE may disturb the ideal structure over time
+* handles this by maintaining roughly the list
+
+### Delete in skip lists
+* Delete(x): when deleting an element x, delete it from all lists containing it
+
+## Inserting in skip lists
+* always insert it into the bottom list by using search(x.key)
+* ![insertSkipList](insertSkipList.png)
