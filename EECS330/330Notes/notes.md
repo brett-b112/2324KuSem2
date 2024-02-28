@@ -780,3 +780,76 @@ if Q.head == Q.tail:
 ## Inserting in skip lists
 * always insert it into the bottom list by using search(x.key)
 * ![insertSkipList](insertSkipList.png)
+---------------
+# **Wednesday Feburary 28th**
+---------------
+# **Hashing and Hash Tables**
+---------------
+
+### Hash Table
+* A hash table is a data struture that supports dictionary operations (INSERT, DELTE, SEARCH) for a dynamic set
+* Compared to other data satructures
+    * Hash tables peform extremely ell in practice
+    * pythiogn dictionaris are built using has tables
+    * used in crypto
+* We assume:
+    * Each object has a unique key (student id) and satellite data (other records)
+
+### Direct Address Tables
+* **Direct Addressing** :
+    * Simple technique that works well when the unvierse of all possibel keys is resonably small <= m
+    * in a **direct address table** each slot corresponds to  a key in the unvierse
+    * ![directAddressTable.png](directAddressTable.png)
+* IN a direct address table all dictionary options (insert, delete, search) are trivial to implement and fast /theta(1) time.
+    * However, with ginormous data sets this can be impractical to store
+### Hash Tables
+* more efficient when the set K of actual keys is much samller thatn the universe U of all possible keys
+* ![hashTable.pn](hashTable.png)
+### Collision
+* collision happens if two keys hash to the same slot in a hash table
+    * 2 ways to resolve conflicts:
+        * hash function/scheme: tries to avoid )or minimize the number of collisions by choosing a suitable hash function h)
+        * Collision resolution: resolves collsiions when they do occru
+### Hash Function
+* "ideal" hash fucntion h hasehs each possible input (k element of U) to a hash value H(k) that has the folowoiign properties:
+    * uniform random: h(k) is chosen randomly and uniformly in the range {0,1, .... , m-1 }
+    * Indpenedent: h(k) is chosen indepently for different k values
+### Independent uniform Hashing
+* the *ideal* hash funuction
+    * hard to implement
+    * practical hash functions approx to this ideal
+### Hashing Schemes
+* static hashing
+    * division method
+    * multiplication method
+* randhom hasing
+    * universal hasing
+* Prefaect hasing
+    * simple scheme
+    * two level scheme
+### Static hashing
+* Static hashing uses a single, fixed hash function ℎ. Thus, the same input 𝑘 will be hashed to the same slot when static hashing is applied multiple times
+* Division method
+    * ![divMethod](divMethod.png)
+* multiplication method
+    * ![multMethod](multMethod.png)
+
+### Collisions in Static hashing
+* Static Hashing is vulnerable to a worst case behavior created by malicious adversayr who could choose a set of keys that all hash to the same slot cerating a lot of collisions
+* ![hackCollis](hackCollis.png)
+
+### Random Hashing
+* Introduce ranomization in hash functions to achieve good expected # of collisions without assuming unifrom elements
+* In random hasing instead of using a fixed hash function h, a family H = {h1, h2, ... } of hash functions is used.
+    * Before executing a sequence of operations (insert, delete, search), a particular hash function ( h elemetn of H) is sleected at random from the fam
+
+### Universal Hashing
+* Special case of random hasing
+* if it satisfies
+    * for any distinc keys k1 and k2 the nuber of hash fuctions in H that hash them to the same slos is |H|/m.
+    * in other words we choose a member of H, h at random with probability h(k1) = h(k2) is <= 1/m
+    * In universal hashing with n elemnets for a given elemetn x # of collisions (or # of elmetns that has to the same slto as x)
+        8 in expectation /theta(a) where a = n/m is the load factor (avg number of elements per slot)
+
+##### Example of Univeral Hashing
+* ![exUnHash.png](exUnHash.png)
