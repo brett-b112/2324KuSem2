@@ -853,3 +853,74 @@ if Q.head == Q.tail:
 
 ##### Example of Univeral Hashing
 * ![exUnHash.png](exUnHash.png)
+
+---------------
+# **Friday March 1st**
+---------------
+# **Hashing Continued Lecture slides 8**
+---------------
+
+### Perfect Hashing
+* gauruntees zero collisions
+* only works for a static set of n elements
+* thus the hash functions need to be reconstructued if the set of elements is changed
+* two types of perfect hasing schemes both rely on universal hashing
+    * simple scheme : m = \theta(n^2)
+    * two level sceme : m = \theta(n)
+
+### Simple Scheme
+* perfroms the following procedure to gauruntee no collision fora set of n elements
+* ![simpleScheme.png](simpleScheme.png)
+* **Theorem** : Using simple perfect hashing scheme with m = n^2 the success probabiity of each trial is >= 1/2
+
+### Two-level Scheme:
+* The <ins> two level perfect hasing </ins> scheme uses *two levels o hash tables* with *universal hashing* at both levels
+* **First level** : a hash table of size(m) = n <ins> there may be collisions </ins>
+* **Second Level** : hash tables of varying sizes for each slot of first level <ins> gaurantees no collisions </ins>
+* ![twoLevel.png](twoLevel.png)
+
+### compare hash schemes
+* ![compareHash.png](compareHash.png)
+
+### Collision Resolution
+* resolves for things hashed to same slot
+    * chaining
+    * open addressing
+
+### Chaining
+* resolves collision by using a *linked list* for all elments hashed to the same slot
+* ![chaining.png](chaining.png)
+
+### Insert and Delete
+* in a hash table with **chaining** INSERT, DELEE, all take \theta(1)
+* **same as PREPEND and DETELE** operations on a linked list
+
+### Search
+* In a hash table wit hn elements and *chaining* the <ins>SEARCH</search> element takes
+* **WORST CASE**
+    * \theta(n)
+    * under static hashing (all n elements hash to the same slot)
+* **AVERAGE CASE**
+    * \theta(1 + 𝛼)
+    * Under static hashing (assuming elements chosen uniformly), or under universal hashing (without assumption on elements).
+    * 𝛼 = 𝑛/𝑚 is load factor (“< 1”, “= 1”, and “> 1” are all possible).
+    * Θ(1) time for applying hash function and accessing slot.
+    * Θ(𝛼) time for searching through the elements
+* **THUS**
+    * if a = O(1) or equivalently n = O(m) the average/expected SEARCH time is \theta(1)
+### Open Addressing
+* *stores all of the elments in the hash table itself*
+    * each entry of a table has an element or NIL
+    * table could fill up i.e. load factor a = 1
+* **collisions** are handled by successively probing the different slots
+    * INSERT -> probe until mpty slot is found and store new element
+    * SEARCH -> probe until elmenet is found (success) or not (fail)
+* ![probeSequence](probeSequence.png)
+* check slides to see the sequence CHECK BUDDY ACTUALLY STUDY
+
+### Probe Sequence
+* **INSERT**
+    * follows the probe sequence until an **empty slot is found (for inserting the element)** or **realizing the table is full** (cant insert)
+* **SEARCH**
+    * follos the same probe sequence until **success** (key is found) or **failure** ( empty slot is found or all positions are probed**
+    * ![probePsuedo.png](probePsuedo.png)
