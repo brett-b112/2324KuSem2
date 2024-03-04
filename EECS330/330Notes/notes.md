@@ -924,3 +924,58 @@ if Q.head == Q.tail:
 * **SEARCH**
     * follos the same probe sequence until **success** (key is found) or **failure** ( empty slot is found or all positions are probed**
     * ![probePsuedo.png](probePsuedo.png)
+
+---------------
+# **Monday March 4th**
+---------------
+# **Hashing Continued Lecture slides 8**
+---------------
+
+### Probing Strategies
+* defines the hash function h(k,i) for key k and probe number i
+* two types **Linear probing** and **Double Hashing**
+
+### Linear Probing
+    Uses the hash function:
+    h(k,i) = (h1(k) + i)mod(m)
+    where h1(k) is an auxiliary hash function
+* ![linearProbe.png](linearProbe.png)
+* **Pros**
+    * easy to implement
+    * good cache performance (accessed sequentilaly which are stored in the same cache block
+* **Cons**
+    * primary clustering : long runs occupied slots build up increaseing aerage time. Moreover, the long runs of occupied slots tend to get longer
+
+### Double Hashing
+    Uses the hash function
+    h(k,i) = (h1(k) + i*h2(k))mod(m)
+    where h1(k) and h2(k) are the auxiliary hash functions
+* ![doubleHash.png](doubleHash.png)
+* ![dhEx.png](dhEx.png)
+* Able to insert in position 9 based on the double hashing
+
+### Anlaysis of Open addressing
+* **Uniform Hashing**
+    * the prove seuqnce of the key is equially likely among all permutations (0,1,....,m-1)
+        * *this is and ideal assuption**
+* *Load factor 𝛼 = 𝑛/𝑚 < 1*
+    * since no extra storage is used outside of the table # of elements (n) < # slots (m)
+    * proportion of occupied slots in the hash table
+
+### (Unsuccessful) Search
+* ![unSearch.png](unSearch.png)
+
+### Other Operations
+* a **successful search** takes *less time*
+* **INSERT** takes the *same time* as *unsuccessful SEARCH* (because it inserts after finding an empty slot*
+* **DELETE** is tricky
+    * simply deleted is \theta(1) time
+    * but after makign the slot NIL may prevent searching for another key whos prove sequcne containst that slot
+    * Alright, let's imagine you have a toy box, and you want to keep it organized. In our case, the toy box is like a storage space for things called elements. Now, sometimes you take out a toy and put it back in the box. But what if the box is full, and you can't find a space for your toy?
+    * One way to handle this is by marking a spot in the box as "DELETED" when you take a toy out. This way, you remember that there was something there before. But, if you do this, searching for toys becomes a bit tricky because you have to check these "DELETED" spots too.
+    * Now, there's another clever way to handle this without marking spots. Imagine you have a special trick to find a free spot without having to mark it. It's like a game – you can still put your toy in the box without leaving a mark, and when you look for it later, you'll know exactly where it is.
+    * But, here's the thing: this trick makes searching for toys a bit different. The time it takes to find a toy doesn't depend on how full the box is anymore. It's like playing hide and seek with rules that stay the same, no matter how many toys are in the box.
+    * So, when computer programs organize information, they sometimes use similar ideas to keep things neat and find them quickly. It's like having different strategies for keeping your toy box tidy!
+
+### Compare Collision Resolutions
+* ![compareCollis.png](compareCollis.png)
