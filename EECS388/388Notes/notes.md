@@ -336,7 +336,7 @@
 
 
 ---------------
-# **Tuesday Feburary 16th**
+# **Tuesday Feburary 16th Lecture 6**
 ---------------
 # ****
 ---------------
@@ -344,7 +344,7 @@
 * check the MIPS cheat sheet and add it here and add the table from the last slide in lecture 5
 
 ---------------
-# **Tuesday Feburary 16th**
+# **Tuesday Feburary 16th Lecture 6**
 ---------------
 # **Functions**
 ---------------
@@ -398,6 +398,8 @@
 
 ### Accessing and Popping Elements
 * ![stackPop.jpg](stackPoing.jpg)
+* ![accessPopEl.jpg](accessPopEl.png)
+
 
 ---------------
 # **Tuesday Feburary 13th**
@@ -466,6 +468,10 @@
 ![slides](./Lecture8/Slide25.jpeg)
 ![slides](./Lecture8/Slide26.jpeg)
 ![slides](./Lecture8/Slide27.jpeg)
+![slides](./Lecture8/Slide28.jpeg)
+![slides](./Lecture8/Slide29.jpeg)
+![slides](./Lecture8/Slide30.jpeg)
+p
 
 ---------------
 # **Tuesday Feburary 20th**
@@ -645,3 +651,116 @@ No we do not need memory hieracrhcy because the CPU
 * diff memory type for each region
 * each platform may have diff mappings
 ![memMap](memMap.png)
+
+---------------
+# **Tuesday March 5th **
+---------------
+# **Lectuer 11 I/O Interface Part 1 ( NOT ON MIDTERM 1 )**
+---------------
+### Interfaces
+* Two types of interfaces
+* **Serial**
+    * USB, RS-232 VGA cable, SPI, SATA connections
+    * Pros: few pins and wires, high scalability, low power consumption
+    * cons: lower bandwidth for the same clock speed
+* **Parallel**
+    * Parallel ATA (advanced tech attachemnet), SCSI (small computer system inteface), PCI (perihperal component interface (this connects ram and graphics card to the board)
+    * Pros: higher bandwith
+    * Cons : more pins and wires, low scalability, high power consumption
+### Transfer Types
+* [transferType.png](transferType.png)
+
+### Synchronous vs. Asynchronous
+
+### Synchronous Transmission
+    TX ---Data----> RX
+    TX ---Clock----> RX
+* **synchronous transmission**
+    * requires ocmmon shared clock
+    * higher throughput communicaiton
+    * low scalability
+    * parallel interfaces are usually sync
+
+###  Asynchronous Transmission
+    TX ---Data----> RX
+* No shared clokc
+* Asynchronous start/stop
+* Self clocekd, based on transmitted and reciever
+
+### Serial Communication Standard: RS-232
+* A 1 is represented by −3 to −25 V
+* A 0 is represented by +3 to +25 V
+    * Low voltage denotes 1
+    * large voltage range makes it less susceptible to noise, interferenace and degredation
+* ![RS232.png](RS232.png)
+
+### RS232
+* The idle state of the RS232 lines is logic 1 (-12V)
+* To signal a start condition the line is set logic 0 (+12V) for 1 bit period (please note high voltage means 0).
+* Cause a 1 to 0 transition indicates valid data is coming 11
+* ![RS232.png](RS2320.png)
+
+### RS232 Frame Format
+* ![RS232.png](RS232ff.png)
+
+### Parity Bit
+* used for deteing errors in bits
+* Two types: 'even' , 'odd'
+* Even Parity: if total number of 1's are even the parity bit value is set to 0. for odd parity its opposite
+* ![](parityBit.png)
+* the number of ones has to be either even or odd than the last bit will be 1 for even adn 0 for odd if they don't match then there is an error
+* the first 0 indicates the start bit then the next 8-bits forms the transmitting frame
+### RS-232 Pins
+* ![](RS232.png)
+
+### Universial Asynchronous Reciever/Transmitter (UART)
+* Convert parallel content of an 8-bit register t oa bit sequence ready to be transmitted ofver a serioal port
+* processor pins -> UART -> volt conversion -> RS232
+
+### System bus diagram in the slides (slide 17)
+
+### UART Speed (Baudrate)
+    Both sender adn reciever must use agreed upon transmisison speed (baudrate)
+* ![RS232.png](RS2320.png)
+* For a baud rate of 2400 (2400 bps) the frequency is 2400Hz and the bit period is 1/2400 or 416.6us.
+* This is the information that a receiver uses to recover the bits from the data stream.
+
+### Question
+* Suppose you are sending data over a UART channel at a baud rate of 115200 bps. How long does it take to send a single 8-bit character over the channel?
+* Assume 2 stop bit, 1 parity bit, and 1 start bit 19
+* ANSWER : 1/115200bps * ( 8 + 2 + 1 + 1)
+
+### Type of Network
+* ![](typeOfNet.png)
+
+### Example of Bus based communication I2C Bus
+* 2C is serial and synchronous communication protocol.
+* Synchronous -> Uses clock for syncing the data
+* Serial -> data line
+
+### I2C Bus Data Protocol
+* Data is transferred in sequences of 8 bit
+    * bgeings with a start bit
+* After start bit, the master provides address of r/w bit
+    * It's the address of the slave device
+    * R/W denotes if the master wants to read or write
+    * ![](I2C.png)
+* After address and R/W bits are sent, Slave returns and ACK bit (acknowledgement)
+*  If the ACK is 0slave could not receive the data
+* If the Master wants to point to an internal register of the slave device, a second address can be sent
+* **start and stop singal**
+    * high-to-low SCL is hgh defines a START condition
+    * low-to-hgih SCL is high defines STOP
+
+### SPI
+    Serial Peripheral Interface
+    Synchronous, serial communication protocol
+* Uses 4 lines, full-duplex, over 10Mbps
+* Single master, multi-slave
+* No start/stop bits
+* Good for fast, short distance communication, e.g., connecting
+
+### SPI Protocol
+* Master shifts out to MOSI (Master Out Slave In) and shifts in from MISO (Master In Slave Out)
+* Slave shifts in from MOSI and shifts out to MISO
+* ![](SPIp.png)
