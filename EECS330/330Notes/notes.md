@@ -41,7 +41,9 @@
 * ### Sorting Algorithms
     * Insertion, Merge, Quicksort, Heapsort
 
-* # Insertion Sort
+# Insertion Sort
+    Best-case Array is already sorted
+    Insertion sort is an Θ(𝑛^2) algorithm
 *I believe that all of the content and pseudocode has the first index as 1 and not 0**
 * https://www.youtube.com/watch?v=JU767SDMDvA&ab_channel=MichaelSambol
     * An efficient algo for sorting a small number of elements
@@ -236,6 +238,9 @@ determine the cost at each level, and sum them up. This is useful for understand
 --------------------------
 # Divide and Conquer Algorithms
 --------------------------
+* Divide the problem into one or more subproblems that are smaller instances of the same problem.
+* Conquer the subproblems by solving them recursively.
+* Combine the subproblem solutions to form a solution to the original problem.
 
 ### Binary Search
 1. **Divide** : check middle element
