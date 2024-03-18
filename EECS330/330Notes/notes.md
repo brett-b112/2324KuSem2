@@ -191,6 +191,8 @@
 * comparison between two functions f and g and the comparison of two real numbers
 * ![compare](comparingNum.png)
 * for real numbers either a <= b or a >= b
+* **NOTE**
+![dichProp.png](dichProp.png)
 
 ### Growth of functions
 * ![runtime](runtimeDiag.png)
@@ -200,6 +202,7 @@
 * 2^lg(n) = n
 * (sqrt(2))^lg(n) = sqrt(n)
 **order of growth highest to lowest**
+### Examples of asymptotic notation from highest runtime to lowest
 * n! e^n 2^n n^3 n^2 nlg(n) { 2^lgn n } (sqrt(2))^lgn) lg^2(n)
 
 --------------------------
@@ -386,6 +389,7 @@ https://www.youtube.com/watch?v=Hoixgm4-P4M&ab_channel=MichaelSambol
     * **Runtime**
         * O (lgn)
         * *because it has a height of h and h =lgn but its big O because you might not always go down to a leaf*
+![](mhRT.png)
 * **Building a Heap**
     * **Max Heapify** builds a heap from the bottom up
     * ![buildHepa](buildHeap.png)
@@ -730,7 +734,7 @@ if Q.head == Q.tail:
 ### Balanced BSTs
 * AVL Tree
     * each node the heights of its two children subtrees differ by at most 1
-* Red Blak Tree:
+* Red Black Tree:
     * each node has an extra "color" bit ("red" or "black") used to re-organize the tree to ensure its approx balance
     * ![balanceBST](balanceBST.png)
 
@@ -768,7 +772,7 @@ if Q.head == Q.tail:
 
 ### How ro speed up search with skip lists
 * Skip lists speed up search by mainting multiple lists and some lemenets appear in both connected by vertical links
-* ![skipListSearch](skipListSeach.png)
+* ![skipListSearch](skipListSearch.png)
 
 ### Time complexity for searching throguh a skip list
 * ![twoLists](twoLists.png)
@@ -958,6 +962,8 @@ if Q.head == Q.tail:
 * ![doubleHash.png](doubleHash.png)
 * ![dhEx.png](dhEx.png)
 * Able to insert in position 9 based on the double hashing
+#### For each key K you start with i = 0 then incremenet for each key
+#### i is the attempt for that key (i.e. for a hypothetical key 13 you start with key 0,1,2,.... then it finds a spot now for a new key 45 i = 0 then i =1 ,2,3,.....
 
 ### Anlaysis of Open addressing
 * **Uniform Hashing**
@@ -984,3 +990,85 @@ if Q.head == Q.tail:
 
 ### Compare Collision Resolutions
 * ![compareCollis.png](compareCollis.png)
+
+
+# CONTENT AFTER THE MIDTERM
+
+---------------
+# **Monday March 18th**
+---------------
+# **Disjoint Sets and Graphs**
+---------------
+
+### Disjoint Sets
+* Dynamic sets aer collection of objects i.e. S = {3,2,5,8,9
+* Two sets are **disjoint** if they share objects in common i.e. A = {3,2,9} B = {1,5,6}
+* A disjoin-set (aka union-find) data structure maintains a collection of disjoint sets.
+Each set is identified by a *representative* whcih is some member of the set
+
+* *Examples*
+    * A = {3,2,8,9} representative -> 3
+    * B = {1,5,6} representative -> 5
+    * C = {7,4,11} representative -> 11
+
+### Disjoint set Operations
+* Make-set(x) : creeates a new set with only member and thus representative is x if x not in another set
+* union(x,y) : merges two sets containing x and y respectively
+* find-set(x) : returns the representative o teh set containing element x
+
+### Scenario
+* intially call make-set n times to have n singleton sets
+* Then m operatiosn of union and find-set are performed
+    * union reduces the number of sets by 1 among m operations i.e. at most n -1 union operations
+    * watn to know runing time of m operations
+
+### Applications of disjoint sets
+* finding *connected components* of an undirected graph
+* finding *minimum spaning tree* of a weighted graph
+* ![graps.png](graphs.png)
+
+### Representing Disjoint sets
+* linked lists
+* trees
+
+### Linked-list Representation
+* Each set is represented by its own linked list with all elements of the set
+    * *Set Object* has two attributes
+        * head pointer, tail pointer
+    * *pointer attributes* in each element of the list
+        * next pointer (NIL if last), set pointer (back to the set)
+    * The **representative** of the set is the *first element* in the list
+    * ![](disjointLL.png)
+
+* **MAKE-SET(X)**
+    * creates a new linked list with one elmenet x
+    * *running time* : Θ(1)
+
+* **FIND-SET(X)**
+    * Follws pointer from x to set object and retunrs obj that head points to
+    * *running time* : Θ(1)
+    * ![](find_set.png)
+
+* **UNION(x,y)**
+    * Appen y's list fo the end of x's list and update pointers
+    * *running time* : Θ(|𝑆2|), where 𝑆2 is the set containing 𝑦 (due to
+updating the set pointers of all elements in 𝑆2)
+    * ![](UnionDisj.png)
+
+* **simple UNION(x,y)**
+    * always appends the second element y's list to the first element x's list
+    * each sequence m of UNION and FIND-SET opeations has a worst case n-1 UNIONs and each appends the longer list to the shorter list
+    * Running time : Θ(𝑛^2)
+    * ![](simpleUnion.png)
+    * *TOTAL RUNNING TIME* of m operations O(m + n^2)
+### Weighted Union
+
+* **weighted UNION(x,y)
+    * appends shorter list to the longer list
+    * ![](weightedUnion.png)
+    * *TOTAL RUNNING TIME* : O(m + nlg(n))
+
+### Tree Representation
+* *Each set* is representated by a *rooted tree* each node represents one element in the set
+    * each element of the set has a *pointer attribute: parent pointer* (which points to its parents in the tree)
+    * the *representative* of the set is the **ROOT** of the tree
