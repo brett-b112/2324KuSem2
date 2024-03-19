@@ -764,3 +764,22 @@ No we do not need memory hieracrhcy because the CPU
 * Master shifts out to MOSI (Master Out Slave In) and shifts in from MISO (Master In Slave Out)
 * Slave shifts in from MOSI and shifts out to MISO
 * ![](SPIp.png)
+
+---------------
+# **Lecture 11 Tuesday March 19**
+---------------
+# **I/O Interface**
+---------------
+
+## USB Universal Serial Bus
+* Uses "differential signaling" : transmits two signals D+ and D-, where S = D+ - D-
+    * reduces noise impact
+    * Noise Signal N impacts both D+ and D- in the same wy
+    * Gets eliminated: S = (D+ + N) – (D- + N)= D+ – D-
+    *![](USBEx.png)
+
+* USB differntial signal moes between differential 1 and differential 0
+    * **Differenitial 1** is when the D+ line is high and the D- line is low
+    * **Differential 0** is when the D+ line is low and the D- line is high
+    *![](USBD1.png)
+![](USBGraph.png)
