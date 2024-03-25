@@ -244,3 +244,75 @@ updating the set pointers of all elements in 𝑆2)
     2. 2nd wave: all vertices with distance 2 from s
 * BFS uses a singel FIFO queue Q to keep track of the frontier of the waves
 * ![](bfs1.png)
+
+---------------
+# **Monday March 25th**
+---------------
+# **Graphs Continued**
+---------------
+Read this article
+    https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+
+## How BFS Works - vertex colors
+    During search, BFS uses 3 colors to indicate the progress of each vertex in the graph
+* **WHITE**
+    * Vertex is undiscovered
+        * all verticies start white
+* **GRAY**
+    * discovered for the first time i.e. the vertiex is in the "frontier" of search
+        * vertex color is chagned from whtie to gray
+        * vertex is enqueued into FIFO Queue Q
+* **BLACK**
+    * Behind the "frontier" of search
+        * happens when the vertex is dequeued from Q
+        * followed by discovering all of its neighbors
+        * vertex's color is then chagned from gray to black
+
+## How BFS Works - attributes
+    when BFS discovers a white vertex v for the first time from a gray vertex u we say u is the predecessor or parent of v
+* BFS maintains 3 attributes for vertex vs
+    * v.color: (intiially WHITE)
+    * v.d : distance from source vertex s to vertex v (initially infinity)
+    * v.pi (v.𝜋) : predecessor/parent of vertex v (intially NIL)
+* When v is discovered fro the first time from u, we have:
+    * v.color = GRAY
+    * v.d = u.d + 1
+    * v.pi = u
+    * ![BFSfirst.png](BFSfirst.png)
+
+## Illustration of BFS on undirected graph
+![illundir.png](illundir.png)
+![illundir.png](illundir2.png)
+
+## Pseudocode of BFS
+![psBFS.png](psBFS.png)
+
+## Running time of BFS
+    Θ(𝑉 + 𝐸)
+![runtimeBFS.png](runtimeBFS.png)
+
+## Exercise BFS undirected graph
+![exerciseBFS.png](exerciseBFS.png)
+
+![330BoardWork3.png](330BoardWork3.jpg)
+![330BoardWork4.png](330BoardWork4.jpg)
+
+## Depth-first search (DFS)
+* While BFS searches in the wave frontier from a source vertex, depth-first search (DFS) starts from any vertex, and searches “deeper” in the graph whenever possible, before backtracking to search for other vertices in the frontier.
+![dfs.png](dfs.png)
+
+## How DFS works
+* Like BFS, DFS also uses 3 colors to indicate the progress of each vertex in the graph.
+    * WHITE: the vertex is undiscovered yet.
+    * GRAY: the vertex is discovered for the first time.
+    * BLACK: the vertex is finished, i.e., all of its neighbors in the adjacency list have been completed explored.
+* Additionally, DFS maintains 2 timestamps for each vertex 𝑣.
+    * 1st timestamp 𝑣. 𝑑: records when the vertex 𝑣 is first discovered (thus colored GRAY).
+    * 2nd timestamp 𝑣. 𝑓: records when the vertex v is finished (thus colored BLACK).
+    * We uses the notation on the right in our illustration
+    * We should always have: 𝑣.𝑑 < 𝑣.𝑓
+    * Why maintain timestamps: they could be used later for other purposes (i.e., in topological sort). 𝑣. 𝑑 / 𝑣. 𝑓
+
+## Illustration of DFS
+![illustrationDFS.png](illustrationDFS.png)
+* check slides 10 Graphds.pdf slide 33/50 for more examples
