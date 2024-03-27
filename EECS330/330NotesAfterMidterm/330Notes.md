@@ -307,12 +307,54 @@ Read this article
     * GRAY: the vertex is discovered for the first time.
     * BLACK: the vertex is finished, i.e., all of its neighbors in the adjacency list have been completed explored.
 * Additionally, DFS maintains 2 timestamps for each vertex 𝑣.
-    * 1st timestamp 𝑣. 𝑑: records when the vertex 𝑣 is first discovered (thus colored GRAY).
-    * 2nd timestamp 𝑣. 𝑓: records when the vertex v is finished (thus colored BLACK).
-    * We uses the notation on the right in our illustration
+    * 1st timestamp 𝑣.𝑑: records when the vertex 𝑣 is first discovered (thus colored GRAY).
+    * 2nd timestamp 𝑣.𝑓: records when the vertex v is finished (thus colored BLACK).
+    * we uses the notation on the right in our illustration
     * We should always have: 𝑣.𝑑 < 𝑣.𝑓
     * Why maintain timestamps: they could be used later for other purposes (i.e., in topological sort). 𝑣. 𝑑 / 𝑣. 𝑓
 
 ## Illustration of DFS
 ![illustrationDFS.png](illustrationDFS.png)
 * check slides 10 Graphds.pdf slide 33/50 for more examples
+
+---------------
+# **Wednesday March 27th**
+---------------
+# **Graphs Continued**
+---------------
+
+## Pseudocode of DFS
+![psBFS.png](psBFS.png)
+
+## Runtime of DFS
+![runtimeDFS.png](runtimeDFS.png)
+
+## Example Problem
+![DFSExercise.png](DFSExercise.png)
+![DFSEx.jpeg](DFSEx.jpeg)
+
+## Path and Cycle in Directed Graph
+![pathCycle.png](pathCycle.png)
+
+## Directed Acylic graph (DAG)
+* A direced graph with no cycles is called a directed acylci graph (DAG)
+![DAG.PNG](DAG.png)
+
+## Topological Sort
+* A topological sort ofa DAG G = (V, E) is a linear ordering of all its vertices s.t. that if the graph ocntains an edge (u,v) then u appears befroe v in the ordering.
+* You can think of a topological sort of a graph as an ordering of its vertices along a horizontal line so that all directed edges go from left to right
+* Note:
+    * Topological sort is only defined for DAGs. When a directed graph contains a cycle, no linear ordering is possible.
+    * Topological sort is different from comparison-based sorting algorithms we studied previously
+
+## Application of Topological Sort
+* Can be used to sequence tasks with depdency constraints
+![](topSort.png)
+
+## Topological sort via DFS
+* DFS can used to preform topoligcal sort of a DAG in Θ(𝑉 + 𝐸) time.
+![](appTopSort.png)
+
+## Example DFS DAG Exercise
+![](DFSDAGex1.jpeg)
+![](DFSDAGex.jpeg)
