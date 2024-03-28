@@ -129,6 +129,8 @@ or is euqal ot hte voltage that is externally forced at the VREF/2
 # Interrupt
 ------------
 # Thu Mar 21st
+# Thu Mar 28st
+
 ------------
 
 ## Interrupt-Driven vs. Polling
@@ -185,7 +187,9 @@ or is euqal ot hte voltage that is externally forced at the VREF/2
 1. Causign the interrupt to occur
 2. Handlign the interrupt request
 
+--------------------------------------------
 # Part 1: Causing the Interrput to Occur
+--------------------------------------------
 
 ## Conditions for Having an intterupt
 * Several things must be true for an I/O device to actually interrupt the program that is running:
@@ -207,3 +211,117 @@ or is euqal ot hte voltage that is externally forced at the VREF/2
 
 ## Generation of an INterrupt Signal
 ![genInterrupt.png](genInterrupt.png)
+
+## I/O Device has teh right
+* there is an interrupt enable bit in each I/O device
+* Can be set/reset by the processor depending on whether or not the processor wants to give the I/O device the right to request service
+* In most I/O devices, this interrupt enable (IE) bit is part of the device status register
+![interSig.png](interrSig.png)
+
+
+## Urgency of the Interrupt
+* Multiple devices may want to interrupt at a specific time. But the processor may not want to address all of them
+* Hence, each rpogram runs at a specific priority level
+* interrutp goes to higher priority process
+    * We do not want a radio volume control to interrupt an image processing application in an autonomous vehicle!
+
+## Interrupts can happen at anytime!
+![anyTime.png](anyTime.png)
+![anyTime.png](interStack.png)
+![anyTime.png](interruptSig.png)
+
+--------------------------------------------
+# Part 1: Causing the Interrput to Occur
+--------------------------------------------
+Handing an interrupt goes through 3 stages:
+1. Initiate the interrupt
+2. Serve the interrupt
+3. Return from the interrupt
+
+1. **Initiate the interrupt**
+![game1.png](game1.png)
+
+* The processor does two things:
+    * Save the state of the interrupted (current) program
+        * So that we can restart the program once we handled the interrupt
+        * Do we need to save the content of the register file?
+    * Load the state of the interrupting program
+* **Saving the state**
+    * The state of a program is a snapshot fo the contents of all the programs resources
+    * To save the state, we have two options: doing it thorugh hardware or software
+* **Vectored Interrupts**
+    * An **inerrupt vector** is provided to the provcessor by the interruption I/O device
+    * The interrupt vector is used by the processor to reference an entry in the Interrupt Vector Table
+    * Interrupt Vector Table consists of memory locations each containing the starting address of an Interrupt Service Routine
+    * Interrupt Service Routines are program fragments stored in memory that service interrupt requests
+* ![image](vectoredInter.png)
+
+
+2. **Serve the interrupt**
+![game2.png](game2.png)
+
+3. **Return from the interrupt**
+
+* Restorign the stage of the interrupted program and bring it back to execution
+![executionFlow.png](gexecutionFlow.png)
+![direct_mode_interrupts.png](direct_mode_interrupts.png)
+![image](siFiveI.png)
+![image](siFiveI2.png)
+* **Local and Global Interrupts**
+* The local interrupts are generated based on some activity internal to the processor.
+    * They can be generated using software running in the processor or a timer that is counting towards a certain number.
+    * Software interrupts are most useful for inter-processor communication
+    * The global or external interrupts are interrupts from external devices such as GPIO, UART, I2C etc.
+    * To handle the global interrupts the Si-Five processor has a module called PLIC or platform- level interrupt controller
+        * PLIC is connected to GPIO, I2C, Etc.
+        * PLIC supports 52 global interrupts with 7 priority level
+        * We studied in last class that to combine the interrupt from multiple IO devices, we need priority encoding.
+        * The PLIC module helps in this process.
+    * When an interrupt arrives, corresponding interrupt pending bit is set
+    * If interrupt is enabled for the device trap will occur
+    * The trap process invokes a trap handler routine
+    * The trap handler routine will CLAIM the interrupt
+    * Read the memory mapped registers in the PLIC
+        * returns ID of the interrupting device
+        * After that it will clear the pending bit
+        * To handle the local interrupts the Si-Five processor has a module called CLINT or Core Local INTerrupts
+
+* ![image](PLIC.png)
+* ![image](PLICp.png)
+
+* **Control and Status REgisters (CSRs)
+* Privilege registers for software/hardware communication
+* Use special instructions to read/write
+
+* **Interrupt related CSRs:**
+    * mstatus: used to enable or disable global interrupt
+        * ![image](mstatus.png)
+    * mie: enable/disable individual interrupts
+        * ![image](mie.png)
+    * mip: which interrupts are currently pending
+        * ![image](mip.png)
+    * mtvec: base address of the interrupt vector
+        * ![image](mvtec.png)
+    * mepc: used for storing the PC before handling the interrupt
+        * ![image](mpec.png)
+    * mcause: shows the cause of the interrupt
+        * There many reasons a systme is interruption (local or global interr/exceptions)
+        * mcause indicates teh even caused the trap
+        * ![image](mcause.png)
+
+## Interrupt Priorities
+* In Sifive there are there are the local and global interrupts have different priorities
+
+* Sifive interrupts are prioritized as follows, in decreasing order of priority:
+    * Machine external/global interrupts
+    * Machine software interrupts
+    * Machine timer interrupts
+* Individual priorities of global interrupts are determined by the PLIC
+
+## Setting external/global interrupts
+* Each PLIC interrupt source can be assigned a priority by writing to its 32-bit memory-mapped priority register
+* supports 7 levels of priority (0 being lowest)
+    * ![image](globIn.png)
+
+## PLIC INterrupt Priority
+![image](InterPrio.png)
