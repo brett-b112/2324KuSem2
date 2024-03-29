@@ -358,3 +358,91 @@ Read this article
 ## Example DFS DAG Exercise
 ![](DFSDAGex1.jpeg)
 ![](DFSDAGex.jpeg)
+
+## Connected Compmonents
+
+* In an undirected Graph G = (V,E)
+    * A vertex 𝑣 is reachable from another vertex 𝑢, if there is a path that goes from 𝑢 to 𝑣.
+    * A connected component of 𝐺 is a subset of its vertex set 𝑉, in which all vertices in the subset are reachable from each other.
+    * The graph 𝐺 is said to be connected if it has only one connected component, i.e., all vertices of 𝐺 are reachable from each other.
+    * ![image](connComp.png)
+
+## Connected Components by graph search
+* Method 1 : Graph-searchign algorithms (e.g. BFS, DFS)
+    1. In both BFS and DFS, the search starts with some vertex s and discovers all vertices that are reachable from s. These vertices form a connected component of G.
+    2. If there are still unexplored vertices left, the algorithm picks another vertex s′ and discovers all vertices reachable from s′. These form another connected component of G.
+    3. The process repeats until all connected components are found.
+* **RUNNING TIME**
+    * This method takes Θ(𝑉 + 𝐸) time.
+
+## Connected components by disjoint sets
+* Method 2 : Disjoint-set data structure can also be used to find connected components of a graph G
+    * MAKE-SET(𝒙): creates a new set from element 𝑥.
+    * UNION(𝒙, 𝒚): merges the two sets containing elements 𝑥 and 𝑦.
+    * FIND-SET(𝒙): finds the set containing element 𝑥.
+    1. The algorithm makes a new set for each vertex 𝑣 (via MAKE-SET).
+    2. For each edge connecting two vertices 𝑢 and 𝑣, if they don’t belong to the same set (via FIND-SET), merge them (via UNION).
+    3. Repeat above for all edges to find all sets (connected components).
+* Running time: This method takes Θ(𝑉 + 𝛼(𝑉)𝐸) time, where 𝛼 𝑉 ≤ 4 for most practical graphs.
+* ![image](psCC.png)
+
+---------------
+# **Friday March 29th**
+---------------
+# **Minimum Spanning Trees**
+---------------
+
+## (Free) Tree
+* A (free) tree is a graph with the following conditions:
+    * *Undirected*: the edges of the graph don’t have directions.
+    * *Connected*: the graph has only one connected component.
+    * *Acyclic* : there is no cycles in the graph
+* IF an undirected acyclic graph is disconnected (i.e. has > 1 connected components) it is a forest
+![MinSpanTree.png](MinSpanTree.png)
+
+## (Free) Tree Properties
+* Any two vertices are connected by a unique simple pathMinSpanTree.png
+    * Simple path : a pathw were all vertices in the path are distinct
+    * |𝐸| = |𝑉| − 1 (# edges is one less than # vertices)
+    * If any existing edge is removed, the resulting graph will be disconnected
+    * If any new edge is added between two vertices the resulting graph will contain a cycle
+![treeProp.png](treeProp.png)
+
+## Spanning Tree
+* For a connected, undirected graph 𝐺 = (𝑉, 𝐸), its spanning tree 𝑇 = (𝑉, 𝐴) is a free tree that contains:
+    * All the vertices in 𝑉, and
+    * A subset 𝐴 of edges in 𝐸, i.e., 𝐴 ⊆ 𝐸.
+* ![spanningTree.png](spanningTree.png)
+
+## Minimum spannign tree (MST)
+* A weighted graph is a connected, undirected graph 𝐺 = (𝑉, 𝐸) with a weight function 𝑤(𝑢, 𝑣) that specifies the cost (or weight) of each edge 𝑢, 𝑣 ∈ 𝐸.
+* A minimum spanning tree (MST) for a weighted graph 𝐺 = (𝑉, 𝐸) is a spanning tree 𝑇 = (𝑉, 𝐴) of 𝐺 with the least total cost in the set 𝐴 of edges.
+* ![image.png](minimumST.png)
+* The wegiths of MST: 11, 8, 7, 10
+    * ![image.png](minST2.png)
+    * The weight is form the blue edges
+## Representing a Minimum Spanning Tree
+![image.png](minST2.png)
+
+## Application of MST
+* cost effective netwrok design
+* Office Locations
+
+## How to find MSTs??
+* generic way that grows by adding one edge at a time
+* Kruskal's Algorithm
+* Prim's Algorithm
+* Both are greedy algorithms
+
+## Generic Method
+* Generic Method starts with empty tree and grows by adding one "sage edge" at a time
+* [image](psGenMST.png)
+
+## Safe Edge
+    What makes a safe edge?
+* [image](safeEdge.png)
+
+* during GENERIC-MST procedure an edge (u,v) is "safe" if it meets:
+    * t.e. a cut (S,V-S) that respects A (part of the MST found so far)
+    * (u,v) is an edge that crosses the cut (S,V-S) and its weight is the minimum among all edges crossing the cut
+    * ex: edge (c,d) with weight 7 is safe in the picture above
