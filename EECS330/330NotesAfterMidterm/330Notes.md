@@ -435,14 +435,49 @@ Read this article
 * Both are greedy algorithms
 
 ## Generic Method
-* Generic Method starts with empty tree and grows by adding one "sage edge" at a time
-* [image](psGenMST.png)
+* Generic Method starts with empty tree and grows by adding one "safe edge" at a time
+* ![image](psGenMST.png)
 
 ## Safe Edge
     What makes a safe edge?
-* [image](safeEdge.png)
+* ![image](safeEdge.png)
 
 * during GENERIC-MST procedure an edge (u,v) is "safe" if it meets:
-    * t.e. a cut (S,V-S) that respects A (part of the MST found so far)
+    * i.e. a cut (S,V-S) that respects A (part of the MST found so far)
     * (u,v) is an edge that crosses the cut (S,V-S) and its weight is the minimum among all edges crossing the cut
     * ex: edge (c,d) with weight 7 is safe in the picture above
+    * ex: cut that goes throguh a-h b-h and b-c, then a-h and b-c would be safe edges as well
+    * ex: d-e is valid safe edge with a cut throguh d-e and f-e
+    * ex: i-g is not a safe edge it doesn't respect the blue boundry it would be a cycle
+---------------
+# **Monday April 1st**
+---------------
+# **Minimum Spanning Trees Continued**
+---------------
+https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
+
+## Kruskal's Algorithm
+    the edge set A at any time contains a forest (collection of trees)
+* Intially A is empty adn teh forest has |A| singleton vertices
+* Initially, 𝐴 is empty, and the forest contains |𝑉| singleton vertices.
+* All edges are processed in increasing order of weight.
+* In each iteration, it finds an edge that connects two trees and has the lowest weight. (This edge is guaranteed to be “safe”.)
+* The process repeats until all trees are connected ➔ final MST
+* ![image](kAlg.png)
+* ![image](kAlg2.png)
+* ![image](kAlg3.png)
+* ![image](kAlg4.png)
+* ![image](kAlg5.png)
+* A: 1 + 2 + 2 + 4 + 4 +8 + 8 +9 = 37 total weight for the tree
+
+## Implementation of Kruskals Algorithm
+    implemented with a disjoin-set data structure
+* Using a disjoint-set data structure, where each set represents a tree in the forest, and the trees are gradually merged to form the MST.
+* Sorting the set of edges initially in increasing order of weight and processing them one by one
+* ![image](mstKrAlg.png)
+
+## Runnign time of Kruskal's Algorithm
+* ![image](kAlgRuntime.png)
+* have to first sort edges as opposed to not which is similar to connected componenets by disjoint sets
+* ![exercsie.png](exercise.png)
+* ![kAlgBW.jpg](kAlgBW.jpg)
