@@ -83,7 +83,7 @@
 ![image](exADC.png)
 
 ## Step Size
-![image](stepSize.png)
+![image](stepSize1.png)
 
 ## Example ADC Circuit
 ![image](exCircuit.png)
@@ -303,7 +303,7 @@ Handing an interrupt goes through 3 stages:
     * mtvec: base address of the interrupt vector
         * ![image](mvtec.png)
     * mepc: used for storing the PC before handling the interrupt
-        * ![image](mpec.png)
+        <!-- * ![image](mpec.png) -->
     * mcause: shows the cause of the interrupt
         * There many reasons a systme is interruption (local or global interr/exceptions)
         * mcause indicates teh even caused the trap
@@ -325,3 +325,68 @@ Handing an interrupt goes through 3 stages:
 
 ## PLIC INterrupt Priority
 ![image](InterPrio.png)
+
+----------
+# Tuesday April 2nd Lecture 15
+--------
+# Reverse Engineering
+-------
+
+## Why are we learning security
+* Security is ever in use and hardware needs to be secure
+
+## Introduction
+* ![image](REIntro.png)
+
+## Bitstream / Binary / Software Rev. Eng
+* UNdersand the properties of machien code
+* Each arch has fixed set of opcode, operand, and register naming
+* Cna be static or dynamic
+* ![image](REBits.png)
+
+## Why rev. eng is helpful for embedded
+* RE requires investigation of the ISA to understand the structure of the binary
+* Requires analysis of the binary execution
+* Hence, performing RE will improve our understanding of the ISA, code compilation process, and code simulation
+
+## Reverse Engineering for Cybersecurity
+* Legitamite purposes
+    * understand the problem
+    * identify vulnerbilities
+    * analyze securit vulnerabilities
+* Malicious pruposes
+    * IP Piracy
+    * Develop malware
+    * trojan insertion
+
+## Real world example
+* Hackers manages to unlock tesla software-locekd features worth up to $15,000
+    * attack involved reverse engineering binaries
+    * understanding teh boot process of the software system
+
+## White Hat reverse enginering for securit anlaysis
+* “A white hat hacker reverse engineered 30 mobile financial applications and found sensitive data buried in the underlying code of nearly all apps examined.”
+* “With this information a hacker could, for example, recover application programming interface (API) keys and use them to attack the vendor’s backend servers and compromise user data”
+
+## Examples of deploying spyware and KEIL
+    printing for exam looking good ahah
+
+ ![image](./Lecture15/slide10.png)
+ ![image](./Lecture15/slide11.png)
+ ![image](./Lecture15/slide12.png)
+ ![image](./Lecture15/slide13.png)
+ ![image](./Lecture15/slide14.png)
+ ![image](./Lecture15/slide15.png)
+ ![image](./Lecture15/slide16.png)
+ ![image](./Lecture15/slide17.png)
+ ![image](./Lecture15/slide18.png)
+ ![image](./Lecture15/slide19.png)
+ ![image](./Lecture15/slide20.png)
+ ![image](./Lecture15/slide21.png)
+ ![image](./Lecture15/slide22.png)
+ ![image](./Lecture15/slide23.png)
+ ![image](./Lecture15/slide24.png)
+ ![image](./Lecture15/slide25.png)
+ ![image](./Lecture15/slide26.png)
+ ![image](./Lecture15/slide27.png)
+ ![image](./Lecture15/slide28.png)
