@@ -481,3 +481,51 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * have to first sort edges as opposed to not which is similar to connected componenets by disjoint sets
 * ![exercsie.png](exercise.png)
 * ![kAlgBW.jpg](kAlgBW.jpg)
+
+---------------
+# **Wednesday April 3rd**
+---------------
+# **Minimum Spanning Trees Continued**
+# *Prim's Algorithm*
+---------------
+
+## Prim's Algorithm
+    https://www.youtube.com/watch?v=cplfcGZmX7I&ab_channel=MichaelSambol
+    PA at anytime always maintains a single tree A which will eventually grow to form the MST
+* three starts from arbitry root vertx r
+* In each interation, adds to tree A a minimum-wegiht edge that connets the tree ot hte rest of the vetices
+    * This edige is gaurunteed to be "safe"
+* the process repeats until all vertices are added to the tree
+* ![image](illPrimsAlg.png)
+* ![image](illPrimsAlg2.png)
+* ![image](illPrimsAlg3.png)
+* $ + 8 + 2 +4 + 1 + 1 + 7 + 9 = 37
+
+## Implementation of Prim's ALgorithm
+* Algorithm maintains a min-priority queue Q
+    * **INSERT**
+        * insert a new vertex with a key into the prioity queue Q
+    * **EXTRACT-MIN**
+        * removes and return a vertex with smallest key
+    * **DECREASE-KEY**
+        * decreases the value of a vertex's key to a specific new value
+    * Runtime : O(lgV) time to implement iwth MIN-HEAP
+
+* Each vertex 𝑣 ∈ 𝑄 has the following attributes:
+    * 𝑣.𝑘𝑒𝑦: minimum weight of any edge connecting 𝑣 to a vertex in tree 𝐴 (initially set to 𝑣. 𝑘𝑒𝑦 = ∞ and possibly updated when a neighbor is added to the tree).
+    * 𝑣.𝜋: parent of 𝑣 in tree 𝐴 when it is added to the tree (initially set to 𝑣. 𝜋 = 𝑁𝐼𝐿 and updated when added to the tree).
+
+## Psuedocode for Prim's Alg
+* ![image](PSPrimsAlg.png)
+
+## Runtime for Prim's Alg
+    O(ElgV)
+* ![image](runtimePA.png)
+* E is the number of times you do this with maximum time that you incur lg(V)
+* Asymptotically the same as that of Kruskal's Algorithm O(ElgE) where E is the same as V
+* dense: Prim's
+* Sparse: Kruskal's
+
+## Exercise
+* ![image](PrimsExercise0.jpeg)
+* ![image](PrimsExercise.jpeg)
