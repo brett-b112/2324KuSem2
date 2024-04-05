@@ -529,3 +529,75 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 ## Exercise
 * ![image](PrimsExercise0.jpeg)
 * ![image](PrimsExercise.jpeg)
+
+---------------
+# **Data Structures and Algorithms**
+---------------
+# **Shortest Paths**
+---------------
+
+## Shortest Path Problem
+    Asks for shortes possible path between >= 2 vertices
+* The input is a weighted, directed graph 𝐺 = (𝑉, 𝐸), where each edge 𝑢, 𝑣 ∈ 𝐸 has:
+    * a direction that goes from vertex 𝑢 to vertex 𝑣;
+    * a weight 𝑤(𝑢, 𝑣) that specifies the cost (or weight) of the edge
+* ![image](shortPath.png)
+
+## Path Weight
+* ![image](pathWeight.png)
+* ![image](shortPath.png)
+    * in the example path p = <s,y,t,x>
+    * Weight w(p) = 5 + 1 + 6 = 12
+
+## Shortest Path
+
+* from arbitray vetexes u to v there could exist no path or multiple paths
+* ![image](shortestPath.png)
+    * There are multiple shortest paths they have weight 9
+
+## Application of Shortest Path
+* Ex: GPS route planning
+* US Road network
+    * Each vertex represents an intersection;
+    * Each edge represents a road segment between two intersections;
+    * Edge weights represent road distances (or time/cost)
+
+## Different Shortest-path Problems
+* Single-source shortest paths (SSSP): find a shortest path from a given source vertex 𝑠 ∈ 𝑉 of the graph to every other vertex 𝑣 ∈ 𝑉 of the graph
+    * worst asymptotic time the same as single-pair shortest-path (SPSP) problem
+        * i.ei solivng SSSP solves SPSP
+* All-pairs shortest-paths (APSP)
+    * find a shortest path from vertex 𝑢 ∈ 𝑉 to vertex 𝑣 ∈ 𝑉 for everything pair of vertices 𝑢 and 𝑣 in the graph
+        * application finding diamteter of network
+## Negative Weight Edge
+    edges can be negative
+* ex money transfers
+* ![image](negativeEdge.png)
+
+## Cant a shortest path contain a cycle?
+* answer: NO
+* lemma:
+    * A shortest path from a source vertex 𝑢 to a destination vertex 𝑣 does not contain a cycle, regardless of the total weight of the cycle
+* Proof : suppose shortest path p from u to v contains a cycle
+    * 1. if the total wiehgt of the cycle is positive -> a cycle cannot exist
+    * 2. if the total weight of the cycle is negative -> shortest-path is undefined
+    * 3. how about acycle with 0-weight -> a shortet-path should not contain a 0-weight cycle
+
+## Algorithms for SSSP
+* We will present three algorithms for the SSSP problem that work for different scenarios.
+    * Bellman-Ford algorithm: works in the general case, where the edge weights may be negative and the graphs may contain cycles.
+    * DAG-Shortest-Path algorithm: works for the case, where the edge weights may be negative but the graphs do not contain cycles (i.e., DAGs).
+    * Dijkstra’s algorithm: works for the case, where the edge weights must be positive, regardless whether the graphs contain cycles or not.
+* All three algorithms assume that the graph is represented by adjacency lists.
+
+## Representing SSSP Solution
+* ![image](SSSPSol.png)
+
+## Intialization
+* In all three algorithms v.d and v.pi wil be fist initialized (as in psuedocode below) and later refined iteratively
+* ![image](ISSInit.png)
+
+## Constructing SSSP Solution
+* shortest-path weight of a vertex v is given by v.d
+* actual shortest path from the source s to a vertex v is obtained by backtracking the predecessor alues from v to s
+* ![image](SSSPConst.png)
