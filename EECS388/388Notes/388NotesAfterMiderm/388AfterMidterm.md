@@ -371,22 +371,53 @@ Handing an interrupt goes through 3 stages:
 ## Examples of deploying spyware and KEIL
     printing for exam looking good ahah
 
- ![image](./Lecture15/slide10.png)
- ![image](./Lecture15/slide11.png)
- ![image](./Lecture15/slide12.png)
- ![image](./Lecture15/slide13.png)
- ![image](./Lecture15/slide14.png)
- ![image](./Lecture15/slide15.png)
- ![image](./Lecture15/slide16.png)
- ![image](./Lecture15/slide17.png)
- ![image](./Lecture15/slide18.png)
- ![image](./Lecture15/slide19.png)
- ![image](./Lecture15/slide20.png)
- ![image](./Lecture15/slide21.png)
- ![image](./Lecture15/slide22.png)
- ![image](./Lecture15/slide23.png)
- ![image](./Lecture15/slide24.png)
- ![image](./Lecture15/slide25.png)
- ![image](./Lecture15/slide26.png)
- ![image](./Lecture15/slide27.png)
- ![image](./Lecture15/slide28.png)
+* ![image](./Lecture15/slide10.png)
+* ![image](./Lecture15/slide11.png)
+* ![image](./Lecture15/slide12.png)
+* ![image](./Lecture15/slide13.png)
+* ![image](./Lecture15/slide14.png)
+* ![image](./Lecture15/slide15.png)
+* ![image](./Lecture15/slide16.png)
+* ![image](./Lecture15/slide17.png)
+* ![image](./Lecture15/slide18.png)
+* ![image](./Lecture15/slide19.png)
+* ![image](./Lecture15/slide20.png)
+* ![image](./Lecture15/slide21.png)
+* ![image](./Lecture15/slide22.png)
+* ![image](./Lecture15/slide23.png)
+* ![image](./Lecture15/slide24.png)
+* ![image](./Lecture15/slide25.png)
+* ![image](./Lecture15/slide26.png)
+* ![image](./Lecture15/slide27.png)
+* ![image](./Lecture15/slide28.png)
+
+----------
+# Thursday April 4th
+--------
+# Binary Reverse Engineering
+-------
+## Reverse Engineering in Embedded Devices
+* ![image](./Lecture16/slide2.png)
+## Intro to 8051 MCU
+* ![image](./Lecture16/slide3.png)
+## 8051 Architecture
+* ![image](./Lecture16/slide4.png)
+* ![image](./Lecture16/slide5.png)
+## Internal Memory
+* ![image](./Lecture16/slide6.png)
+* ![image](./Lecture16/slide7.png)
+* ![image](./Lecture16/slide8.png)
+* ![image](./Lecture16/slide9.png)
+## Special Function Registers (SFR)
+* ![image](./Lecture16/slide10.png)
+## Intro to 8051 MCU ISA
+* ![image](./Lecture16/slide11.png)
+* ![image](./Lecture16/slide12.png)
+* ![image](./Lecture16/slide13.png)
+## Reverse Engineering Using Keil
+* ![image](./Lecture16/slide14.png)
+* ![image](./Lecture16/slide15.png)
+* ![image](./Lecture16/slide16.png)
+* ![image](./Lecture16/slide17.png)
+## Example Homework Questions
+* ![image](./Lecture16/slide18.png)
