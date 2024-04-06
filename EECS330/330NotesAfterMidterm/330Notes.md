@@ -316,6 +316,7 @@ Read this article
 ## Illustration of DFS
 ![illustrationDFS.png](illustrationDFS.png)
 * check slides 10 Graphds.pdf slide 33/50 for more examples
+![image](illDFS.png)
 
 ---------------
 # **Wednesday March 27th**
@@ -324,7 +325,7 @@ Read this article
 ---------------
 
 ## Pseudocode of DFS
-![psBFS.png](psBFS.png)
+![psBFS.png](psDFS.png)
 
 ## Runtime of DFS
 ![runtimeDFS.png](runtimeDFS.png)
@@ -601,3 +602,6 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * shortest-path weight of a vertex v is given by v.d
 * actual shortest path from the source s to a vertex v is obtained by backtracking the predecessor alues from v to s
 * ![image](SSSPConst.png)
+
+## Relaxation
+* ![image](Relaxation.png)
