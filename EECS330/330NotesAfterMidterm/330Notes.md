@@ -605,3 +605,51 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 
 ## Relaxation
 * ![image](Relaxation.png)
+
+---------------
+# **Monday April 8th**
+---------------
+# **Shortest Paths Continued**
+---------------
+
+## Bellman-Ford Algorithm
+    https://www.youtube.com/watch?v=obWXjtg0L64&ab_channel=MichaelSambol
+* solves general SSSP problem where the edge weights may be negative and the graphs may contain cycles
+
+* The algorithm returns two types of results
+    * returns TRUE or FALSE indicating wheather a meaningful solution exists (i.e. TRUE if there aer no negative-weight cycles in the graph and FALSE otherwise)
+* If it returns TRUE, it also returns the SSSP solution, i.e., 𝑣. 𝑑 and 𝑣. 𝜋 for each vertex 𝑣 ∈ 𝑉 in the graph
+* can also detect negative-weight cycles
+
+## Pseudocode of Bellman-Ford
+* ![image](psBF.png)
+
+## Runtime of Bellman-Ford
+* ![image](runtimeBF.png)
+
+## Illustration of Bellman-Ford
+* Pass 1
+    * ![image](BFPass1.png)
+    * (s,t) (s,y)
+* Pass 2
+    * ![image](BFPass2.png)
+    * (t,x) (t,z)
+* Pass 3
+    * ![image](BFPass3.png)
+    * (x,t)
+* Pass 4
+    * ![image](BFPass4.png)
+    * goes s y x t z
+    * (t,z)
+
+## Bellman-Ford Example
+* ![image](BFExample.png)
+* ![image](BFExampleSol.jpeg)
+
+## Why is Bellman-Ford Correct?
+* ![image](pathRelaxation.png)
+* **Intuition**
+* Since any shortest path does not contain cycles, a shortest path from 𝑠 to any vertex 𝑣 goes through ≤ 𝑉 vertices and thus has ≤ 𝑉 − 1 edges
+* Since Bellman-Ford relaxes edges in arbitrary order, in the worst case, it takes |𝑉| − 1 passes for the shortest-path weight to propagate correctly to each vertex (in desired order as specified in the path-relaxation property).
+* After |𝑉| − 1 passes, if shortest-path weight can still improve, then there exists a negative weight cycle (which could reduce the shortest-path weight indefinitely).
+* THis means a negative cycle would continually decrease weight
