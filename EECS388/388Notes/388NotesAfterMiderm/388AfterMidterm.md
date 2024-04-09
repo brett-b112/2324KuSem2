@@ -421,3 +421,65 @@ Handing an interrupt goes through 3 stages:
 * ![image](./Lecture16/slide17.png)
 ## Example Homework Questions
 * ![image](./Lecture16/slide18.png)
+
+----------
+# Tuesday April 9th
+--------
+# Buffer Overflow
+-------
+
+## Example Program Flow
+* ![image](progFlo.png)
+* ![image](progFlo2.png)
+
+## Registers Related to Stack
+• EBP ( Extended Base pointer): points to the base of the stack
+• ESP (Extended Stack Pointer): points to the top of the stack
+
+• EIP: Extended Instruction pointer register, which points to the next instruction to be executed at any point of time
+    • We have known it as the return address (RA) register
+    • EIP is always the last thing to be saved on the stack frame of a given function
+
+* ![image](EBPstack.png)
+
+## BSP ESP Takeaway
+* Modifying the return address could alter the flow of code execution
+* This could be done by overwriting on the EIP or EBP that is saved onto the stack
+* What is the benefit of changing program flow execution?
+* How an attacker can overwrite EBP/ESP
+
+## Purpose of Buffer Overflow Attack
+* Arbitray code execution
+    * spawn a remote shlle or execute mailciious code
+* Denial of service (DDOS)
+    * Cause software to crash
+
+## What can malicious code execution do?
+* The Equifax Data Breach: In 2017, Equifax, one of the largest credit reporting agencies in the US, suffered a massive data breach.
+* Hackers exploited a vulnerability in the Apache Struts web application framework using a combination of attakcs
+* The specific vulnerability, identified as CVE-2017-5638, allowed attackers to execute arbitrary code on the server
+* The breach resulted in the theft of sensitive information of over 143 million customers, including social security numbers, birth dates, and addresses.
+
+## How can we execute maliciois code using overflow?
+* The general idea is to overflow a buffer so that it overwrites the return address.
+* When the function is done it will jump to whatever address is on the stack.
+* We put some code in the buffer and set the return address to point to it!
+
+## Example
+* ![image](malicCode.png)
+* ![image](malicCode2.png)
+* ![image](malicCode3.png)
+* ![image](malicCode4.png)
+
+## Steps of buffer overflow
+* Inject attack code into buffer
+* Overflow return address
+* Redirect control flow to attack code
+* Execute attack code
+
+* ![image](malicCode.png)
+
+## Summary
+* Program fails to ensure that a write to a buffer is alwasy within its bound
+* when a buffer ovflow happnes data structures in memory will be corrupted which can change program behaviors
+* in many cases it can lead to the execution of arbitrary code by attacekrs
