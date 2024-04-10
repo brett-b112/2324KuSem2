@@ -653,3 +653,70 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * Since Bellman-Ford relaxes edges in arbitrary order, in the worst case, it takes |𝑉| − 1 passes for the shortest-path weight to propagate correctly to each vertex (in desired order as specified in the path-relaxation property).
 * After |𝑉| − 1 passes, if shortest-path weight can still improve, then there exists a negative weight cycle (which could reduce the shortest-path weight indefinitely).
 * THis means a negative cycle would continually decrease weight
+
+---------------
+# **Wednesday April 10th**
+---------------
+# **Shortest Paths Continued**
+---------------
+
+## DAG-shortest-paths Algorithm
+* Solves the SSSP problem for directed acyclic graphs (DAGs i.e. without cycles) but the edge weights can be negative
+* Unlike Bellman-Ford that makes |𝑉| − 1 passes of edge relaxations, DAG-shortes paths makes only one pass, thus is more efficient than Bellman-Ford
+    1. The algorithm first completes a topoligical sort of vertices
+    2. Then performs edge relaxations over the vertices in the topologically sorted order (with just one pass)
+* Recall that a topological sort returns a linear ordering of the graph’s vertices such that if the graph contains an edge (𝑢, 𝑣), then 𝑢 appears before 𝑣 in the ordering.
+
+## Pseudocode and Runtime of DAG-s-p Algorithm
+    This is an improvement over Bellman-Frod because Θ(𝑉𝐸) time for Bellman ford is greater than Θ(𝑉𝐸) time.
+* ![image](psRuntimeDAG2.png)
+* ![image](psRuntimeDAG.png)
+
+## Example
+* ![image](DAGspEx1.png)
+* ![image](DAGspEx2.png)
+* ![image](DAGspEx3.png)
+* ![image](DAGspEx4.png)
+
+## Algorithm is correct again because of path-relaxation property
+
+## Dijkstra's Algorithm
+    https://www.youtube.com/watch?v=_lHSawdgXpI&ab_channel=MichaelSambol
+* Solves SSSP problem for a graph without negative-wegiht edges but the graph could contain cycles.
+* More efficient than bellman-ford
+
+## Idea of Dijkstra's Algorithm
+* Generalizes **BFS** by emanating "**waves**" from the soruce vertex to all other vertice
+* first wave arrives at a vertex a new wave comes from that
+* **BFS** can be considered a special case of **Djisktras** **Algorithm** for finding SSS with unit-wegiht wedges
+-----------
+* **shortest**-**path** to a vertex can be thoguht of as **shortest** **time** for a wave to prpagate
+* BFS simply maintains the vertices in a FIFO queue since it takes unit time for a wave to cross an edge
+* **Dijkstra**'s **Algorithm** needs to maintain vertices in a **priority** **queue**
+
+## Idea of Dijkstra's Algorithm
+* **Dijkstra**’s **algorithm** uses the **priority** **queue** similarly as how Prim’s algorithm (for MST) uses the priority queue.
+* At any time:
+    * A set 𝑆 contains the vertices whose shortest paths from the source have **already** **been** **determined**.
+    * A **min**-**priority** **queue** 𝑄 contains the remaining vertices whose shortest paths from source are yet to be determined. The priority queue 𝑄 is built based on the vertices’ 𝑣. 𝑑 values (i.e., estimate of the shortest-path weights).
+* At each step:
+    * The algorithm moves the **highest**-**priority** vertex 𝑢 ∈ 𝑄 (i.e., with smallest shortest-path weight) from 𝑄 to 𝑆.
+    * It then performs a relaxation for all vertices adjacent to 𝑢 (i.e., emanating a wave from 𝑣)
+## Pseudocode of Dijkstra's Algorithm
+* ![image](psDijkstras.png)
+
+## Example
+* ![image](DEx1.png)
+* ![image](DEx2.png)
+* ![image](DEx3.png)
+
+## Exercise
+* ![image](Dexercise.png)
+* ![image](DwrittenEx.jpeg)
+
+## Why is Dijkstra's Algorithm Correct?
+* Cna be considered a **greedy** **algorithm** (like PRim's) since ech step it makes a greedy choice moving the **highest** **priority** **vertx** u from Q to S
+* Intuitively, if this doesn’t lead to the shortest path for 𝑢, and suppose the shortest path goes through another vertex 𝑣 ∈ 𝑄, then 𝑣 would have a smaller 𝑑 value, i.e., 𝑣. 𝑑 < 𝑢. 𝑑. This implies that 𝑣 would come earlier than 𝑢 in the priority queue, contradicting that 𝑢 has the highest priority
+
+## Summary of SSSP Algorithms
+* ![image](SSSPSummary.png)
