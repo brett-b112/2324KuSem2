@@ -720,3 +720,56 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 
 ## Summary of SSSP Algorithms
 * ![image](SSSPSummary.png)
+
+---------------
+# **Friday April 10th**
+---------------
+# **Shortest Paths Continued**
+---------------
+
+## Optimization Problems
+* ![image](optimizationProblem.png)
+
+## Greedy Algorithms
+* **Algorigthms** **for** **optimization** **problems** typically go throguh a sequence of steps, where each step makes a choice/decision
+* A **greedy** **algorithm** always makes the choice that is the best at each step. That is **locally** **optimal** **choice** in the hope that this choice leads to a **globally** **optimal** **solution**.
+* Greedy strategy important algorithmic design paradigm used to solve many **optimization** **problems**
+
+* We’ll consider three problems and present greedy algorithms to solve them optimally.
+    * Problem 1: Activity selection
+    * Problem 2: Job scheduling
+    * Problem 3: Huffman code
+* Previously, we also looked at the MST and SSSP problems, and showed that they admit optimal greedy algorithms (i.e., Prim, Kruskal, Dijkstra).
+* Note: Greedy algorithms do not always yield optimal solutions, but sometimes they do. (In this course, we’ll focus on the case when greedy algorithms do yield optimal solutions)
+
+## Problem 1: Activity-Selection
+* ![image](ActivitySelection.png)
+* ![image](ActivitySelection1.png)
+* Subset 1a a4 a7 has incompatible activities because activity a4 ends at 7 which is beteen the start and finish of a7
+
+## Greedy Choice
+* ![image](greedyChoice.png)
+
+## Greedy Activity Selector
+* ![image](greedyActivitySelector.png)
+
+## Illustration
+* ![image](greedyIllustration.png)
+
+## Why is this greedy choice optimal?
+* Theorem. Activity 𝑎1 must be included in some optimal solution (i.e., a maximum-size subset of mutually compatible activities).
+* Proof: We prove the theorem using a cut-and-paste argument
+
+## Greedy Choice Matters
+* the **optimal** **greedy** **algorithm** described above selects the first **activity** **to** **finish** at each step
+* other greedy algorithsm could make **alternative** **greedy** **choices** at each step and they **may** **not** **yield** **optimal** **solutions**
+
+## Exercise
+* Argue if the following greedy choices are optimal. If not, provide a counter-example against its optimality.
+    * Select the first activity to start at each step.
+        * This is not optimal because you would choose a3 a7 a11 which is not four
+    * Select the activity with the shortest duration at each step.
+        * This is not optimal becuase you could have two large tasks with a smaller task that overlaps them both and then it is no longer optimal
+    * Selects the last activity to start at each step.
+        * This is an optimal solution
+        * If you view the graph upside down you can see that when its upside down its the same as first to start
