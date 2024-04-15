@@ -773,3 +773,49 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
     * Selects the last activity to start at each step.
         * This is an optimal solution
         * If you view the graph upside down you can see that when its upside down its the same as first to start
+
+---------------
+# **Monday April 15th**
+---------------
+# **Greedy Algorithms Continued**
+---------------
+
+## Problem 2: Job Scheduling
+* ![image](JobScheduling.png)
+* ![image](JobScheduling2.png)
+    * Schedule 2 is the optimal scheduling
+    * It elminates wait time as the small jobs finish first and then big jobs can be completed
+    * similar to a factorial as ech job is the time of all the jobs before it plus the job itself
+## Greedy Choice
+### Intuition
+* ![image](greedyC1.png)
+
+## Shortest job first (SJF) algorithm
+* ![image](sjf.png)
+    * Cmin is what we are looking to optimize
+
+## Why is the greedy choice optimal?
+* The shortest job is processed first in an optimal schedule
+
+## Exercises
+# **EXAM** **PROBLEM** **THIS** **WILL** **BE** **ON** **THE** **EXAM** **RED** **ALERT**
+## Exercise 1: Suppose 𝑛 jobs are given in increasing order of processing time, i.e., 𝑝1 ≤ 𝑝2 ≤ ⋯ ≤ 𝑝𝑛. Give a formula for the minimum total completion time of the jobs.
+* np1 + (n-1)p2 + .... + 2pn-1 + pn
+* |----| p1
+* |----||----| p2
+* |----||----||----| p3
+* ......
+* ............................. |----| pn
+* Then you have to sum up all of the terms
+*    n
+*    Σ (n-j+1)pj
+*   j = 1
+## Exercise 2:What is an optimal greedy algorithm for maximizingthe total completion time of the jobs?
+* THis is just the opposite do the longest job first
+
+# FINAL EXAM INFO
+* Time/Venue : May 6 (Monday) , 7:30am - 10:00am , G415 LEEP
+* Format: 20 MCQs , 5 Open Questions , (30 points)
+* Open Book, Open Note
+* NO electronics
+* No make-up
