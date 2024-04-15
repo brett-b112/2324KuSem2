@@ -819,3 +819,4 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * Open Book, Open Note
 * NO electronics
 * No make-up
+* Emphasis on second half 80% from after break 20% from first half of course
