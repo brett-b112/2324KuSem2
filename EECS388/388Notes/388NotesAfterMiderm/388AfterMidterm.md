@@ -483,3 +483,106 @@ Handing an interrupt goes through 3 stages:
 * Program fails to ensure that a write to a buffer is alwasy within its bound
 * when a buffer ovflow happnes data structures in memory will be corrupted which can change program behaviors
 * in many cases it can lead to the execution of arbitrary code by attacekrs
+
+* ![image](mitigation1.png)
+* ![image](mitigation2.png)
+* ![image](mitigation3.png)
+* ![image](mitigation4.png)
+
+----------
+# Tuesday April 16th
+--------
+# Side Channel Attacks
+-------
+
+## What is a side channel attack?
+* Motivation:
+    * Extract secret data being processed inside a hardware (e.g., cryptographic keys)
+    * Extract information on the internal operation of the hardware (e.g., algorithmic steps)
+    * Other forms of eavesdropping
+* How?
+    * Without directly looking at the internal bus or data in memory
+    * Observe indirect data that is emitted during the execution of a computational process
+* 5 commonly exploited side-channel emissions:
+    * time consumtopn
+    * timing and delay
+    * electro-magnetic
+    * optical
+    * acoustic
+
+## Side Channel in Embedded Systems
+* Side channel is particularly more important for embedded systems
+* Remote computing systems like servers are generally not accessible to end users -> makes SCA difficult
+* Embedded devices are generally accessible to end users (smart watch, smart automotive)
+* However, there are few remote SCA attacks!
+
+## Power Side Channel
+* ![image](powerSideChannel.png)
+* How to stop the read the waveforms put a transistor in between the oscillator arrows (the squiggly line)
+* the oscilloscope reads the power
+
+## Circuit Operation vs Power Signature
+* Not average power over time, not peak power
+    * Instantaneous power over time
+        * Trace or curve, many samples
+* Every operation within the device, such as fetching data from memory, processing, and storing data, has a unique power signature.
+* Cryptographic operations, in particular, tend to cause noticeable fluctuations in power usage because they are computationally intensive.
+* ![image](powerConsump.png)
+
+## Why Different Operation Consume Different Power
+* **Logic** **Circuit** **Operation**:
+    * constant supply voltage, supply current values
+* Predominant Technology
+    * **CMOS**
+    * Lowe static power consumption
+    * RElatively high dynamic power consumption
+    * Power consumption depends on input
+    * ![image](CMOSinverter.png)
+    * ![image](diffPower.png)
+
+## Identifying Patterns
+* **Identifying** **Patterns**:
+    * Power consumption analysis reveals distinct patterns for cryptographic operations like modular exponentiation (RSA) or S-box lookups (AES).
+* **Key** **Extraction** **from** **Patterns**:
+    * Attackers use statistical methods to extract secret keys by correlating power spikes with specific operations or data processing.
+    * Repeated analysis with different inputs allows for full or partial recovery of encryption keys.
+* **Consequences** **of** **Key** **Extraction**:
+    * With the extracted key, attackers can decrypt sensitive data, impersonate entities, or engage in other malicious activities.
+
+## Simply Power Analysis (SPA)
+* Monitor the device’s power consumption to deduce information about data and operation
+* Example: SPA on Data encryption standard (DES) algorithm
+
+## DES Basic Structure
+* ![image](DESbasicStruct.png)
+
+## Observing DES Rounds
+* ![image](observeDES.png)
+* round 1 is the first arrow
+* round 2 is the second set of arrows
+
+## More Operations
+## jump vs no jump
+* ![image](jumpVno.png)
+* you can firn k = 1 or u = 0 to revela part of a key
+
+## Timing Attacks
+* ![image](timeAttack.png)
+
+## Simple Example
+* ![image](simpleEx.png)
+
+## Timing Attack on RSA Cryptosystem
+* Modular exponentiation is a fundamental operation in many cryptographic algorithms, including RSA and Diffie- Hellman.
+* The security of RSA relies on the difficulty of factoring the large modulus n, which is derived from two large prime numbers.
+* Modular exponentiation is used because it allows for this one-way function—easy to compute in one direction (encryption) and hard to reverse (decryption) without the private key.
+
+## Kocher's Obsevation
+* ![image](KocherObs.png)
+
+## Outline of Kocher's Attack
+* Idea: guess some bits of the exponent and predict how long decryption will take
+* If guess is correct, we will observe correlation; if incorrect, then prediction will look random
+    * This is a signal detection problem, where signal is timing variation due to guessed exponent bits
+    * The more bits you already know, the stronger the signal, thus easier to detect (error-correction property)
+* Start by guessing a few top bits, look at correlations for each guess, pick the most promising candidate and continue
