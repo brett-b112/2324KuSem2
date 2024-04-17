@@ -1,3 +1,4 @@
+* ![image](huffEx1.png)
 ---------------
 # **Monday March 18th**
 ---------------
@@ -820,3 +821,60 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * NO electronics
 * No make-up
 * Emphasis on second half 80% from after break 20% from first half of course
+
+---------------
+# **Wednesday April 17th**
+---------------
+# **Greedy Algorithms Continued**
+---------------
+
+## Elements of Greedy Algorithms
+* Two key elements of greedy algorithm
+    * **Greedy**-**choice** **property**: a globally optimal solution contains a locally optimal (greedy) choice.
+        * **Example** **1**: For activity selection problem, local greedy choice is the activity with the earliest finish time.
+        * **Example** 2: For job scheduling problem, local greedy choice is the job with the shortest processing time.
+    * **Optimal** **substructure**: a globally optimal solution contains within it the optimal solution to a subproblem.
+        * **Example** **1**: For activity selection problem, the subproblem (with the remaining activities after selecting the first activity) must be selected optimally.
+        * **Example** **2**: For job scheduling problem, the subproblem (with the rest of jobs after scheduling the first job) must be scheduled optimally.
+
+## Steps to Design Greedy Algorithms
+* ![image](stepToGreedy.png)
+
+## Problem 3: Huffman Code (variable free and prefix free)
+* ![image](huffmanCode.png)
+
+## Fixed-Length Code
+* ![image](fixLengthCode.png)
+
+## Variable-Length Code
+* ![image](varLengthCode.png)
+
+## Prefix-Free Code
+* ![image](prefixFreeCode.png)
+
+## Code Representation via Binary Trees
+* ![image](codeRepviaBin.png)
+* ![image](codeRepviaBin2.png)
+
+## Constructing Huffman Code
+* ![image](huffmanCode2.png)
+* this algorithm is optimal and builds the tree from the bottom up
+
+## Illustration of Huffman's Algorithm
+* ![image](illhuffman.png)
+* ![image](illhuffman2.png)
+
+## Psuedocode of Huffman's Algorithm
+## and runtime
+* ![image](illhuffman3.png)
+
+## Huffman Exercise
+* ![image](huffmanEx.png)
+* ![image](huffEx1.JPG)
+* ![image](huffEx2.JPG)
+* ![image](huffEx3.JPG)
+* ![image](huffEx4.JPG)
+* ![image](huffEx5.JPG)
+* ![image](huffEx6.JPG)
+* ![image](huffEx7.JPG)
+* ![image](huffEx8.JPG)
