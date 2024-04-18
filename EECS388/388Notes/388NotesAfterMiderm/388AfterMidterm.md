@@ -586,3 +586,99 @@ Handing an interrupt goes through 3 stages:
     * This is a signal detection problem, where signal is timing variation due to guessed exponent bits
     * The more bits you already know, the stronger the signal, thus easier to detect (error-correction property)
 * Start by guessing a few top bits, look at correlations for each guess, pick the most promising candidate and continue
+
+----------
+# Thursday April 18th
+--------
+# Operating System and Processes
+-------
+
+## Systems
+* ![image](system.png)
+
+## Bare-metal vs OS-Assisted
+
+* **Bare**-**Metal**
+    * Pro:
+        * Requires less hardware resources
+        * fast for small and simple applicaitons
+    * Con:
+        * not scalable/suitable for comples and real time applications
+        * require low level knowledge of io device
+        * no mutli-threading
+* **OS**-**Assisted**
+    * Pro:
+        * Scalabel for large and complex application
+        * requries less konwledge of io (uses device drivers)
+        * multi-threading available
+    * Con:
+        * not suitable for small applicaiton
+        * requries significant hardware resources
+
+## Different Types of OS
+* **Personal** **computer** **OS**
+    * Provides an easy-to-use environment to a single user
+    * User interface elements (desktops, GUIs etc.) are important here.
+    * Windows 7 and Mac OS X are examples.
+* **Real**-**time** **OS**
+    * Designed to react to input within certain time constraints.
+    * Input data typically comes from external sensors (not from human)
+    * Many embedded systems are also real-time systems.
+    * Example: Keil RTX is Real-Time Operating System designed for ARM and Cortex-M devices
+* **Embedded** **OS**
+    * Designed to be compact, efficient at resource usage, and reliable
+    * Limited application software
+    * Ex: Embedded Linux for mobile devices
+
+## Benefits of OS
+* Advantage 1: Software Abstraction:
+    * Software side of a computer with OS can be divided into programs, libraries and the operating system.
+    * Each layer hides the complexity of the layer below, and provides a set of abstract services and concepts to the layer above.
+* Example of Abstraction: the computer's hard disk or SSD allows data to be stored on it in a set of fixed-sized blocks or pages.
+    * The OS hides this complexity, and provides the concept of files to the application software.
+    * In turn, an application program such as a word processor hides the idea of a file, and allows the user to work with documents instead.
+* Advantage 2: Resource allocation and management:
+    * The resources in a computer (CPU, memory, disk space) are limited.
+    * The operating system must act as a resource manager, optimizing
+    * the use of the resources
+    * It performs various resource sharing and optimization tasks, discussed in next slide
+## Operating System Tasks
+
+* **Process** **Management**
+    * Allocating/ de-allocating processor to a process and time-sharing the processor across multiple CPU
+    * Keeping track of process status
+    * Assigning priority of process, etc.
+* **Memory** **Management**
+    * Allocating/De-allocating memory efficiently across processes
+    * Keeping track of memory usage
+* **Storage**/**File** **Management**
+    * Tracking where files and programs are stored
+    * Which parts are available for storage etc.
+* **Device** **Management**
+    * Controlling the device communication
+    * Allocating/de-allocating/time-sharing device with processes
+* **Protection** **and** **Security**
+
+
+## Privilege Mode
+* For operating system to hide the computer's hardware, and manage the hardware resources, it **needs** **to** **prevent** **the** **application** **software** **from** **accessing** **the** **hardware** directly.
+* In a processor there are many privilege modes. Basically certain functions have less restrictions then other when running based on their privilege levels.
+* Example:
+    * certain instructions/actions are not permitted
+    * some memory areas cannot be accessed, etc.
+    * ![image](privMode.png)
+
+## System Calls
+* ![image](sysCall.png)
+
+## System Call Example
+* ![image](sysCallEx.png)
+
+## Modern OS are Interrupt Driven
+* ![image](modernOS.png)
+
+## The Process
+* ![image](theProcess.png)
+
+## Process States
+* ![image](processState.png)
