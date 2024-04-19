@@ -878,3 +878,57 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * ![image](huffEx6.JPG)
 * ![image](huffEx7.JPG)
 * ![image](huffEx8.JPG)
+
+## Why is greedy choice optimal?
+* Let 𝑥 and 𝑦 be two characters with lowest frequencies. Then there exists a tree representing an optimal prefix-free code, where 𝑥 and 𝑦 are two sibling leaves of maximum depth.
+
+---------------
+# **Friday April 19th**
+---------------
+# **Dynamic Programming**
+---------------
+
+## Dynamic Programming (DP)
+* Important algorithmic design paradigm for solving **optimization** **problems**.
+* Unlike greedy algorithms, which makes a locally optimal choice at each step, dynamic programming may need to examine multiple choices at each step and choose one that leads to a global optimal solution.
+* Both greedy algorithms and dynamic programming rely on solving subproblems (but in slightly different ways as we’ll see) to construct an optimal solution for the original problem.
+
+* Well consider three problems
+    * rod cutting
+    * matrix chain multiplication
+    * longest common subsequence
+
+## Problem 1: Rod Cutting
+* ![image](rodCut1.png)
+    * optimal is 0 cuts keep at length 10
+
+## Ilustrative Example
+* ![image](rodCut2.png)
+
+## Number of Solutions
+* ![image](numberOfSolutions.png)
+
+## Optimal Solutions
+* ![image](optSols.png)
+
+## Recursive Formula
+* ![image](recursiveFormula.png)
+
+## Rod-Cut Psuedocode
+## recursive top-down implementation
+* ![image](dpPseudo.png)
+* ![image](dpPseudo2.png)
+* THis repeadetly solve similar problems i.e. 2 cuts
+* This is not efficient and causes a runtiem of 2^n.
+
+## Dynamic Programming Implementaion
+* Dynamic programming (DP) can solve the problem more efficiently.
+    * It avoids solving the same subproblems repeatedly.
+    * Instead, it solves each subproblem only once and saves its solution. If the algorithm needs to refer to the solution of this subproblem again later, it can just look it up rather than recomputing it.
+* There are two ways to implement an DP algorithm and we’ll look at both approaches.
+    * **Top**-**down** **approach**.
+    * **Bottom**-**up** **approach**
+
+## Top Down Approach
+* ![image](topDown.png)
+* ![image](memoizedTopDown.png)
