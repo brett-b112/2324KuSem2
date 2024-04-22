@@ -932,3 +932,44 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 ## Top Down Approach
 * ![image](topDown.png)
 * ![image](memoizedTopDown.png)
+
+---------------
+# **Monday April 22nd**
+---------------
+# **Dynamic Programming Continued**
+---------------
+
+## Bottom Up Approach
+* ![image](bottomUP.png)
+* ![image](bottomUP2.png)
+* Runtime: Θ(𝑛2)
+
+## Subproblem Graph
+* ![image](subproblem.png)
+
+## Top-Down vs Bottom-up Approach
+* ![image](topVbottom.png)
+
+## Constructing an Optimal Solution
+* ![image](optimalSol.png)
+* ![image](optimalSol2.png)
+
+### We are going to use bottom up
+
+## Problem 2: Matrix-chain Multiplication
+* ![image](matrixCM.png)
+
+## Standard Matrix Multiplication
+* ![image](standardMult.png)
+
+## Parenthesization of matrix chain
+* ![image](assocMM.png)
+
+## Illustrative Example
+* ![image](MMex.png)
+
+* A1:2 signfies the result of A1 x A2
+* ![image](MMex2.png)
+
+## Number of Solutions
+* ![image](numOfSols.png)
