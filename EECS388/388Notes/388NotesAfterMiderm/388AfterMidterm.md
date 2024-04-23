@@ -714,3 +714,75 @@ Handing an interrupt goes through 3 stages:
 * ![image](./Lecture20/slide37.png)
 * ![image](./Lecture20/slide38.png)
 * ![image](./Lecture20/slide39.png)
+
+----------
+# Tuesday April 28th
+--------
+# Real-Time Process Scheduling 
+-------
+
+## Jobs and Tasks 
+* Job
+    unit of computation 
+* task
+    * sequence of jobs
+
+## Periodic Tasks
+* time-triggered
+    * activated by time
+* activated periodically
+* each instance 
+* same realtive deadline
+    * usually = to period
+* e.g. radar data processing
+* ![image](radarSystem.png)
+* ![image](periodicT1.png)
+
+## Periodic Task Model
+* ![image](periodicT2.png)
+* ![image](periodicT3.png)
+
+## Question 
+* answers
+    * 0 
+    * 4 
+    * 8
+* ![image](periodicT4.png)
+
+## Aperiodic Tasks
+* ![image](AperiodicT1.png)
+
+## Priority and Critiality
+* Priority
+    * priority is the order we execute ready jobs.
+* Criticality (Importance)
+    * represents the penalty if a task misses a deadline (one of its jobs misses a deadline).
+* Question
+    * Which task should have higher priority?
+    * Task 1: The most import task in the system: if it does not get done, serious consequence/accident will occur
+    * Task 2: A mp3 player: if it does not get done in time, the played song will have a glitch
+    * If it is feasible, we would like to meet the real-time deadlines of both tasks
+## Utilization
+* ![image](utilization.png)
+
+## Real-Time Scheduling Algorithms 
+* A scheduler may be:
+    * part of a compiler or code generator (for scheduling decisions made at design time),
+    * part of an operating system or microkernel (for scheduling decisions made at run time),
+    * or both (if some scheduling decisions are made at design time and some at run time).
+* Fixed (static) -priority scheduling
+    * All tasks have the same priority
+    * Rate Monotonic (RM)
+* Dynamic priority scheduling
+    * Different tasks may have different priorities
+    * Earliest Deadline First (EDF)
+
+## Scheduling Algorith
+* A scheduling algorithm decides what task to execute next
+* Scheduling Decisions
+    * **assignment**: which processor should execute the task;
+    * **ordering**: in what order each processor should execute its tasks; and
+    * **timing**: the time at which each task executes
+* These decisions could be made at:
+    * design time: before the program begins executing, or
+    * run time: during the execution of the program
