@@ -682,3 +682,35 @@ Handing an interrupt goes through 3 stages:
 
 ## Process States
 * ![image](processState.png)
+* Doesnt want CPU 
+
+----------
+# Tuesday April 28th 
+--------
+# Operating Systems Cont. 
+-------
+
+## These are the rest of the slides for lecture 20
+* ![image](./Lecture20/slide16.png)
+* ![image](./Lecture20/slide17.png)
+* ![image](./Lecture20/slide18.png)
+* ![image](./Lecture20/slide19.png)
+* ![image](./Lecture20/slide20.png)
+* ![image](./Lecture20/slide21.png)
+* ![image](./Lecture20/slide22.png)
+* ![image](./Lecture20/slide23.png)
+* ![image](./Lecture20/slide24.png)
+* ![image](./Lecture20/slide25.png)
+* ![image](./Lecture20/slide26.png)
+* ![image](./Lecture20/slide27.png)
+* ![image](./Lecture20/slide28.png)
+* ![image](./Lecture20/slide30.png)
+* ![image](./Lecture20/slide31.png)
+* ![image](./Lecture20/slide32.png)
+* ![image](./Lecture20/slide33.png)
+* ![image](./Lecture20/slide34.png)
+* ![image](./Lecture20/slide35.png)
+* ![image](./Lecture20/slide36.png)
+* ![image](./Lecture20/slide37.png)
+* ![image](./Lecture20/slide38.png)
+* ![image](./Lecture20/slide39.png)
