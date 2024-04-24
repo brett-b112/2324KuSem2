@@ -973,3 +973,47 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 
 ## Number of Solutions
 * ![image](numOfSols.png)
+
+
+
+---------------
+# **Wednesday April 24th**
+---------------
+# **Dynamic Programming Continued**
+---------------
+
+## Recursive Formulation
+* ![image](recur.png)
+* ![image](recur2.png)
+
+## Dynamic Programming Algorithm
+
+* Top down Approach
+* ![image](dpAlg.png)
+
+* Bottom Up Approach
+* ![image](dpAlg2.png)
+* Problems of size 1 are along the diagonal
+* i.e. m[1,1] = A1 m[2,2] = A2 m[3,3] = A3
+* entire main diagonal is filled with 0
+* ![image](spAlg3.png)
+* Next diagonal above main is all going to be size 2 i.e. m[1,2] = A1A2 m[2,3] = A2A3 
+    * All size 2
+    * Increases from there along diagonals
+* ![image](dpAlg4.png)
+* ![image](dpAlg5.png)
+
+## DP Pseudocode
+* ![image](dpPS.png)
+
+## DP MM Example
+* ![image](dpMMEx.png)
+
+* i =2 
+* j = 5
+* k = 2,3,4
+* ![image](dpMMEx2.png)
+* ![image](dpMMExSol.jpeg)
+
+## DP MM Optimal
+* ![image](dpMMOptimal.png)
