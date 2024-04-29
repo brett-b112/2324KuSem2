@@ -1017,3 +1017,98 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 
 ## DP MM Optimal
 * ![image](dpMMOptimal.png)
+
+---------------
+# **Friday April 26th**
+---------------
+# **Dynamic Programming (II)**
+---------------
+## DP
+* start with recursive formulation
+
+
+## Dynamic Programming
+* **Dynamic** **programming** (DP), like greedy algorithms, is an important algorithmic design paradigm for solving optimization problems.
+* Unlike greedy algorithms, which makes a locally optimal choice at each step, dynamic programming may need to examine multiple choices at each step and choose one that leads to a global optimal solution.
+* Both greedy algorithms and dynamic programming rely on solving subproblems (but in slightly different ways as we’ll see) to construct an optimal solution for the original problem.
+
+## Problem 3: Longest Common Subsequence
+* ![image](LCSdp.png)
+## Subsequence
+* ![image](LCSdp2.png)
+* ![image](LCSdp3.png)
+
+## Solving LCS by exhaustive search
+* ![image](LCSexhaustive.png)
+
+## Recursive Formulation
+* ![image](recursiveFormulation.png)
+
+## Case 1
+* ![image](recF2.png)
+
+## Case 2 
+* ![image](recF3.png)
+
+## Case 3
+* ![image](recF4.png)
+
+## Recursive Combination of 3 cases
+* ![image](recF5.png)
+
+## Table
+* ![image](recF6.png)
+* ![image](recF7.png)
+* ![image](recF8.png)
+
+## Psuedocode
+Check slides
+
+## An Example
+* ![image](recF9.png)
+
+## Constructing an Optimal Solution
+* ![image](recF10.png)
+
+---------------
+# **Monday april 29th**
+---------------
+# **Dynamic Programming (II) continued**
+---------------
+
+## Example 
+* ![image](Scratch_Work_24.jpg)
+
+## Elements of Dynamic Programming
+* ![image](elemOfDP.png)
+
+## Overlapping Subproblems
+* ![image](overlapSub.png)
+
+## Steps of DP
+* ![image](stepsOfDP.png)
+
+## Greedy vs. DP
+* ![image](greedyVDP.png)
+
+## Knapsack Problems
+* ![image](knapsack.png)
+* ![image](knapsack2.png)
+##### Fractional variant
+* ![image](knapsack3.png)
+##### 0-1 Variant 
+* ![image](knapsack4.png)
+
+## Paradigms that solve subproblems
+* ![image](paradigms.png)
+* Divide and conquer -> computation problems (i.e. sorting, matrix computations)
+* greedy -> optimization
+
+### Divide and Conquer
+* ![image](Pgreedy.png)
+
+### Greedy
+* ![image](PDC.png)
+
+### Dynamic Programming 
+* ![image](PDP.png)
