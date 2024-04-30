@@ -786,3 +786,134 @@ Handing an interrupt goes through 3 stages:
 * These decisions could be made at:
     * design time: before the program begins executing, or
     * run time: during the execution of the program
+
+## Shcheduling
+* ![image](./Lecture21/slide1.png)
+* ![image](./Lecture21/slide2.png)
+* ![image](./Lecture21/slide3.png)
+* ![image](./Lecture21/slide4.png)
+* ![image](./Lecture21/slide5.png)
+* ![image](./Lecture21/slide6.png)
+* ![image](./Lecture21/slide7.png)
+* ![image](./Lecture21/slide8.png)
+* ![image](./Lecture21/slide9.png)
+* ![image](./Lecture21/slide10.png)
+* ![image](./Lecture21/slide11.png)
+* ![image](./Lecture21/slide12.png)
+* ![image](./Lecture21/slide13.png)
+* ![image](./Lecture21/slide14.png)
+* ![image](./Lecture21/slide15.png)
+* ![image](./Lecture21/slide16.png)
+* ![image](./Lecture21/slide17.png)
+* ![image](./Lecture21/slide18.png)
+* ![image](./Lecture21/slide19.png)
+* ![image](./Lecture21/slide20.png)
+* ![image](./Lecture21/slide21.png)
+* ![image](./Lecture21/slide22.png)
+* ![image](./Lecture21/slide23.png)
+* ![image](./Lecture21/slide24.png)
+* ![image](./Lecture21/slide25.png)
+* ![image](./Lecture21/slide26.png)
+* ![image](./Lecture21/slide27.png)
+* ![image](./Lecture21/slide28.png)
+* ![image](./Lecture21/slide29.png)
+* ![image](./Lecture21/slide30.png)
+* ![image](./Lecture21/slide31.png)
+* ![image](./Lecture21/slide32.png)
+* ![image](./Lecture21/slide33.png)
+* ![image](./Lecture21/slide34.png)
+* ![image](./Lecture21/slide35.png)
+* ![image](./Lecture21/slide36.png)
+* ![image](./Lecture21/slide37.png)
+* ![image](./Lecture21/slide38.png)
+* ![image](./Lecture21/slide39.png)
+* ![image](./Lecture21/slide40.png)
+* ![image](./Lecture21/slide41.png)
+
+## Shcheduling 2
+* ![image](./Lecture22/slide1.png)
+* ![image](./Lecture22/slide2.png)
+* ![image](./Lecture22/slide3.png)
+* ![image](./Lecture22/slide4.png)
+* ![image](./Lecture22/slide5.png)
+* ![image](./Lecture22/slide6.png)
+* ![image](./Lecture22/slide7.png)
+--------
+THis is the new type of scheduling
+* ![image](./Lecture22/slide8.png)
+* ![image](./Lecture22/slide9.png)
+* ![image](./Lecture22/slide10.png)
+* ![image](./Lecture22/slide11.png)
+* ![image](./Lecture22/slide12.png)
+* ![image](./Lecture22/slide13.png)
+* ![image](./Lecture22/slide14.png)
+* ![image](./Lecture22/slide15.png)
+* ![image](./Lecture22/slide16.png)
+* ![image](./Lecture22/slide17.png)
+* ![image](./Lecture22/slide18.png)
+* ![image](./Lecture22/slide19.png)
+* ![image](./Lecture22/slide20.png)
+* ![image](./Lecture22/slide21.png)
+* ![image](./Lecture22/slide22.png)
+* ![image](./Lecture22/slide23.png)
+* ![image](./Lecture22/slide24.png)
+* ![image](./Lecture22/slide25.png)
+* ![image](./Lecture22/slide26.png)
+* ![image](./Lecture22/slide27.png)
+* ![image](./Lecture22/slide28.png)
+* ![image](./Lecture22/slide29.png)
+* ![image](./Lecture22/slide30.png)
+* ![image](./Lecture22/slide31.png)
+* ![image](./Lecture22/slide32.png)
+* ![image](./Lecture22/slide33.png)
+* ![image](./Lecture22/slide34.png)
+* ![image](./Lecture22/slide35.png)
+* ![image](./Lecture22/slide36.png)
+* ![image](./Lecture22/slide37.png)
+* ![image](./Lecture22/slide38.png)
+* ![image](./Lecture22/slide39.png)
+* ![image](./Lecture22/slide40.png)
+* ![image](./Lecture22/slide41.png)
+
+* ![image](quiz678.png)
+## Scheduling 3
+* ![image](./Lecture23/slide1.png)
+* ![image](./Lecture23/slide2.png)
+## Quiz Solutions 
+--------
+* ![image](quiz678.png)
+* ![image](quiz678_12.png)
+* ![image](quiz678_3.png)
+-------
+## Answers to this problem
+------
+* ![image](./Lecture23/slide3.png)
+* ![image](quiz13_388.png)
+------
+* ![image](./Lecture23/slide4.png)
+* ![image](./Lecture23/slide5.png)
+* ![image](./Lecture23/slide6.png)
+* ![image](./Lecture23/slide7.png)
+* ![image](./Lecture23/slide8.png)
+* ![image](./Lecture23/slide9.png)
+* ![image](./Lecture23/slide10.png)
+------
+* ![image](./Lecture23/slide11.png)
+* 
+-----
+* ![image](./Lecture23/slide12.png)
+* ![image](./Lecture23/slide13.png)
+* ![image](./Lecture23/slide14.png)
+--------
+* ![image](./Lecture23/slide15.png)
+--------
+* e3 = 10
+* r3^2 = 30 
+* so r3^3 = 10 + [30/10](ceiling)*4 + [30/15](ceiling)*4 = 30
+* 30 < 35 so it is schedulable
+    * if we got 40 this would be beyond the dealdine so it's not scheudlable.
+* ![image](./Lecture23/slide16.png)
+* ![image](./Lecture23/slide17.png)
+* ![image](./Lecture23/slide18.png)
+* ![image](./Lecture23/slide19.png)
+* ![image](./Lecture23/slide20.png)
