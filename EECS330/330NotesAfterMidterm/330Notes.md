@@ -1,4 +1,4 @@
-* ![image](huffEx1.png)
+<!-- * ![image](huffEx1.JPG) -->
 ---------------
 # **Monday March 18th**
 ---------------
@@ -130,6 +130,9 @@ updating the set pointers of all elements in 𝑆2)
 
 ## Psuedo Code for Disjoint Set Algorithm
 ![image](PSDSA.png)
+
+## Exercise Problem
+* ![image](setExercise.jpeg)
 
 ---------------
 # **Monday March 18th**
@@ -430,6 +433,9 @@ Read this article
 * cost effective netwrok design
 * Office Locations
 
+-------
+# IMPORTANT KNOW THESE EXAMPLES FOR EXAM WOULD BE GOOD TO HAVE
+-------
 ## How to find MSTs??
 * generic way that grows by adding one edge at a time
 * Kruskal's Algorithm
@@ -501,7 +507,7 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * ![image](illPrimsAlg.png)
 * ![image](illPrimsAlg2.png)
 * ![image](illPrimsAlg3.png)
-* $ + 8 + 2 +4 + 1 + 1 + 7 + 9 = 37
+* 4 + 8 + 2 +4 + 1 + 1 + 7 + 9 = 37
 
 ## Implementation of Prim's ALgorithm
 * Algorithm maintains a min-priority queue Q
@@ -529,7 +535,7 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 * Sparse: Kruskal's
 
 ## Exercise
-* ![image](PrimsExercise0.jpeg)
+* ![image](PrimsExercise0.png)
 * ![image](PrimsExercise.jpeg)
 
 ---------------
@@ -682,6 +688,7 @@ https://www.youtube.com/watch?v=71UQH7Pr9kU&ab_channel=MichaelSambol
 ## Algorithm is correct again because of path-relaxation property
 
 ## Dijkstra's Algorithm
+    cany only have positive weight edges
     https://www.youtube.com/watch?v=_lHSawdgXpI&ab_channel=MichaelSambol
 * Solves SSSP problem for a graph without negative-wegiht edges but the graph could contain cycles.
 * More efficient than bellman-ford
@@ -1092,6 +1099,9 @@ Check slides
 * ![image](greedyVDP.png)
 
 ## Knapsack Problems
+-----------
+* know how greedy algorithms work for this
+----------
 * ![image](knapsack.png)
 * ![image](knapsack2.png)
 ##### Fractional variant
